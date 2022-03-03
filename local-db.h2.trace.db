@@ -1,0 +1,995 @@
+2022-03-03 15:56:15 database: opening C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2 (build 200)
+2022-03-03 15:56:15 database: opened C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 15:56:15 database: connecting session #3 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 15:56:15 jdbc[3]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 15:56:15 jdbc[3]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 15:56:15 jdbc[3]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 15:56:15 jdbc[3]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 15:56:15 jdbc[3]: 
+/**/Connection conn1 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 15:56:15 jdbc[3]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 15:56:15 database: connecting session #4 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 15:56:15 jdbc[4]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 15:56:15 jdbc[4]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 15:56:15 jdbc[4]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 15:56:15 jdbc[4]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 15:56:15 jdbc[4]: 
+/**/Connection conn2 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 15:56:15 jdbc[4]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 15:56:15 database: connecting session #5 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 15:56:15 jdbc[5]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 15:56:15 jdbc[5]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 15:56:15 jdbc[5]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 15:56:15 jdbc[5]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 15:56:15 jdbc[5]: 
+/**/Connection conn3 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 15:56:15 jdbc[5]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 15:56:15 database: connecting session #6 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 15:56:15 jdbc[6]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 15:56:15 jdbc[6]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 15:56:15 jdbc[6]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 15:56:15 jdbc[6]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 15:56:15 jdbc[6]: 
+/**/Connection conn4 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 15:56:15 jdbc[6]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 15:56:15 database: connecting session #7 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 15:56:15 jdbc[7]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 15:56:15 jdbc[7]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 15:56:15 jdbc[7]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 15:56:15 jdbc[7]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 15:56:15 jdbc[7]: 
+/**/Connection conn5 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 15:56:15 jdbc[7]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 15:56:15 database: connecting session #8 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 15:56:15 jdbc[8]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 15:56:15 jdbc[8]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 15:56:15 jdbc[8]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 15:56:15 jdbc[8]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 15:56:15 jdbc[8]: 
+/**/Connection conn6 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 15:56:15 jdbc[8]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 15:56:15 database: connecting session #9 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 15:56:15 jdbc[9]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 15:56:15 jdbc[9]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 15:56:15 jdbc[9]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 15:56:15 jdbc[9]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 15:56:15 jdbc[9]: 
+/**/Connection conn7 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 15:56:15 jdbc[9]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 15:56:15 database: connecting session #10 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 15:56:15 jdbc[10]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 15:56:15 jdbc[10]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 15:56:15 jdbc[10]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 15:56:15 jdbc[10]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 15:56:15 jdbc[10]: 
+/**/Connection conn8 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 15:56:15 jdbc[10]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 15:56:15 database: connecting session #11 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 15:56:15 jdbc[11]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 15:56:15 jdbc[11]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 15:56:15 jdbc[11]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 15:56:15 jdbc[11]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 15:56:15 jdbc[11]: 
+/**/Connection conn9 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 15:56:15 jdbc[11]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 15:56:15 database: connecting session #12 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 15:56:15 jdbc[12]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 15:56:15 jdbc[12]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 15:56:15 jdbc[12]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 15:56:15 jdbc[12]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 15:56:15 jdbc[12]: 
+/**/Connection conn10 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 15:56:15 jdbc[12]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 15:56:15 jdbc[3]: 
+/*SQL l:78 #:4 t:1*/SELECT NAME, VALUE FROM INFORMATION_SCHEMA.SETTINGS WHERE NAME IN (?, ?, ?, ?) {1: 'MODE', 2: 'DATABASE_TO_UPPER', 3: 'DATABASE_TO_LOWER', 4: 'CASE_INSENSITIVE_IDENTIFIERS'};
+2022-03-03 15:56:15 jdbc[3]: 
+/*SQL #:1*/CALL DATABASE();
+2022-03-03 15:59:20 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Mauvais nom d'utilisateur ou mot de passe
+Wrong user name or password [28000-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Engine.openSession(Engine.java:131)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:309)
+	at org.h2.util.JdbcUtils.getConnection(JdbcUtils.java:289)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:785)
+	at org.h2.server.web.WebApp.test(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:238)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:173)
+	at org.h2.server.web.WebServlet.doGet(WebServlet.java:129)
+	at org.h2.server.web.WebServlet.doPost(WebServlet.java:166)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Mauvais nom d'utilisateur ou mot de passe
+Wrong user name or password [28000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 55 more
+2022-03-03 15:59:28 database: connecting session #13 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 15:59:28 jdbc[13]: 
+/**/Connection conn11 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;;FORBID_CREATION=TRUE", "", "");
+2022-03-03 15:59:28 database: disconnecting session #13
+2022-03-03 15:59:28 database: disconnected session #13
+2022-03-03 15:59:29 database: connecting session #14 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 15:59:29 jdbc[14]: 
+/**/Connection conn12 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;;FORBID_CREATION=TRUE", "", "");
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:78 #:4*/SELECT NAME, VALUE FROM INFORMATION_SCHEMA.SETTINGS WHERE NAME IN (?, ?, ?, ?) {1: 'MODE', 2: 'DATABASE_TO_UPPER', 3: 'DATABASE_TO_LOWER', 4: 'CASE_INSENSITIVE_IDENTIFIERS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL #:2*/SELECT SCHEMA_NAME TABLE_SCHEM, CATALOG_NAME TABLE_CATALOG,  IS_DEFAULT FROM INFORMATION_SCHEMA.SCHEMATA ORDER BY SCHEMA_NAME;
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL #:2*/SELECT SCHEMA_NAME TABLE_SCHEM, CATALOG_NAME TABLE_CATALOG,  IS_DEFAULT FROM INFORMATION_SCHEMA.SCHEMATA ORDER BY SCHEMA_NAME;
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:1007 #:33 t:8*/SELECT TABLE_CAT, TABLE_SCHEM, TABLE_NAME, TABLE_TYPE, REMARKS, TYPE_CAT, TYPE_SCHEM, TYPE_NAME, SELF_REFERENCING_COL_NAME, REF_GENERATION, SQL FROM (SELECT SYNONYM_CATALOG TABLE_CAT, SYNONYM_SCHEMA TABLE_SCHEM, SYNONYM_NAME as TABLE_NAME, TYPE_NAME AS TABLE_TYPE, REMARKS, TYPE_NAME TYPE_CAT, TYPE_NAME TYPE_SCHEM, TYPE_NAME AS TYPE_NAME, TYPE_NAME SELF_REFERENCING_COL_NAME, TYPE_NAME REF_GENERATION, NULL AS SQL FROM INFORMATION_SCHEMA.SYNONYMS WHERE SYNONYM_CATALOG LIKE ?1 ESCAPE ?4 AND SYNONYM_SCHEMA LIKE ?2 ESCAPE ?4 AND SYNONYM_NAME LIKE ?3 ESCAPE ?4 UNION SELECT TABLE_CATALOG TABLE_CAT, TABLE_SCHEMA TABLE_SCHEM, TABLE_NAME, TABLE_TYPE, REMARKS, TYPE_NAME TYPE_CAT, TYPE_NAME TYPE_SCHEM, TYPE_NAME, TYPE_NAME SELF_REFERENCING_COL_NAME, TYPE_NAME REF_GENERATION, SQL FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_CATALOG LIKE ?1 ESCAPE ?4 AND TABLE_SCHEMA LIKE ?2 ESCAPE ?4 AND TABLE_NAME LIKE ?3 ESCAPE ?4 AND TABLE_TYPE IN(?5, ?6, ?7, ?8, ?9, ?10, ?11)) ORDER BY TABLE_TYPE, TABLE_SCHEM, TABLE_NAME {1: '%', 2: 'INFORMATION_SCHEMA', 3: '%', 4: '\\', 5: 'TABLE', 6: 'SYSTEM TABLE', 7: 'VIEW', 8: 'SYSTEM VIEW', 9: 'TABLE LINK', 10: 'SYNONYM', 11: 'EXTERNAL'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:1*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'CATALOGS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:2*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'COLLATIONS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:32*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'COLUMNS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:8*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'COLUMN_PRIVILEGES'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:7*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'CONSTANTS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:13*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'CONSTRAINTS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:14*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'CROSS_REFERENCES'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:14*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'DOMAINS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:12*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'FUNCTION_ALIASES'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:17 t:12*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'FUNCTION_COLUMNS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:5*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'HELP'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:22*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'INDEXES'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:2*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'IN_DOUBT'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:9*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'KEY_COLUMN_USAGE'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:4*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'LOCKS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:12*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'QUERY_STATISTICS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:9*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'REFERENTIAL_CONSTRAINTS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:7*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'RIGHTS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:3*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'ROLES'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:8*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SCHEMATA'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:12*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SEQUENCES'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:12*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SESSIONS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:2*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SESSION_STATE'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:2*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SETTINGS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:9*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SYNONYMS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:12*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TABLES'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:9*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TABLE_CONSTRAINTS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:7*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TABLE_PRIVILEGES'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:1*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TABLE_TYPES'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:14*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TRIGGERS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:14*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TYPE_INFO'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:4*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'USERS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:123 #:9*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'VIEWS'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:438*/SELECT ALIAS_CATALOG PROCEDURE_CAT, ALIAS_SCHEMA PROCEDURE_SCHEM, ALIAS_NAME PROCEDURE_NAME, COLUMN_COUNT NUM_INPUT_PARAMS, ZERO() NUM_OUTPUT_PARAMS, ZERO() NUM_RESULT_SETS, REMARKS, RETURNS_RESULT PROCEDURE_TYPE, ALIAS_NAME SPECIFIC_NAME FROM INFORMATION_SCHEMA.FUNCTION_ALIASES WHERE ALIAS_CATALOG LIKE ? ESCAPE ? AND ALIAS_SCHEMA LIKE ? ESCAPE ? AND ALIAS_NAME LIKE ? ESCAPE ? ORDER BY PROCEDURE_SCHEM, PROCEDURE_NAME, NUM_INPUT_PARAMS {1: '%', 2: '\\', 3: 'INFORMATION_SCHEMA', 4: '\\', 5: '%', 6: '\\'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:1007*/SELECT TABLE_CAT, TABLE_SCHEM, TABLE_NAME, TABLE_TYPE, REMARKS, TYPE_CAT, TYPE_SCHEM, TYPE_NAME, SELF_REFERENCING_COL_NAME, REF_GENERATION, SQL FROM (SELECT SYNONYM_CATALOG TABLE_CAT, SYNONYM_SCHEMA TABLE_SCHEM, SYNONYM_NAME as TABLE_NAME, TYPE_NAME AS TABLE_TYPE, REMARKS, TYPE_NAME TYPE_CAT, TYPE_NAME TYPE_SCHEM, TYPE_NAME AS TYPE_NAME, TYPE_NAME SELF_REFERENCING_COL_NAME, TYPE_NAME REF_GENERATION, NULL AS SQL FROM INFORMATION_SCHEMA.SYNONYMS WHERE SYNONYM_CATALOG LIKE ?1 ESCAPE ?4 AND SYNONYM_SCHEMA LIKE ?2 ESCAPE ?4 AND SYNONYM_NAME LIKE ?3 ESCAPE ?4 UNION SELECT TABLE_CATALOG TABLE_CAT, TABLE_SCHEMA TABLE_SCHEM, TABLE_NAME, TABLE_TYPE, REMARKS, TYPE_NAME TYPE_CAT, TYPE_NAME TYPE_SCHEM, TYPE_NAME, TYPE_NAME SELF_REFERENCING_COL_NAME, TYPE_NAME REF_GENERATION, SQL FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_CATALOG LIKE ?1 ESCAPE ?4 AND TABLE_SCHEMA LIKE ?2 ESCAPE ?4 AND TABLE_NAME LIKE ?3 ESCAPE ?4 AND TABLE_TYPE IN(?5, ?6, ?7, ?8, ?9, ?10, ?11)) ORDER BY TABLE_TYPE, TABLE_SCHEM, TABLE_NAME {1: '%', 2: 'PUBLIC', 3: '%', 4: '\\', 5: 'TABLE', 6: 'SYSTEM TABLE', 7: 'VIEW', 8: 'SYSTEM VIEW', 9: 'TABLE LINK', 10: 'SYNONYM', 11: 'EXTERNAL'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL l:438*/SELECT ALIAS_CATALOG PROCEDURE_CAT, ALIAS_SCHEMA PROCEDURE_SCHEM, ALIAS_NAME PROCEDURE_NAME, COLUMN_COUNT NUM_INPUT_PARAMS, ZERO() NUM_OUTPUT_PARAMS, ZERO() NUM_RESULT_SETS, REMARKS, RETURNS_RESULT PROCEDURE_TYPE, ALIAS_NAME SPECIFIC_NAME FROM INFORMATION_SCHEMA.FUNCTION_ALIASES WHERE ALIAS_CATALOG LIKE ? ESCAPE ? AND ALIAS_SCHEMA LIKE ? ESCAPE ? AND ALIAS_NAME LIKE ? ESCAPE ? ORDER BY PROCEDURE_SCHEM, PROCEDURE_NAME, NUM_INPUT_PARAMS {1: '%', 2: '\\', 3: 'PUBLIC', 4: '\\', 5: '%', 6: '\\'};
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL */SELECT * FROM INFORMATION_SCHEMA.SEQUENCES ORDER BY SEQUENCE_NAME;
+2022-03-03 15:59:29 jdbc[14]: 
+/*SQL #:1*/SELECT * FROM INFORMATION_SCHEMA.USERS ORDER BY NAME;
+2022-03-03 15:59:57 database: closing C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2 from shutdown hook
+2022-03-03 15:59:57 database: disconnecting session #14
+2022-03-03 15:59:57 database: disconnected session #14
+2022-03-03 15:59:57 database: disconnecting session #3
+2022-03-03 15:59:57 database: disconnected session #3
+2022-03-03 15:59:57 database: disconnecting session #4
+2022-03-03 15:59:57 database: disconnected session #4
+2022-03-03 15:59:57 database: disconnecting session #5
+2022-03-03 15:59:57 database: disconnected session #5
+2022-03-03 15:59:57 database: disconnecting session #6
+2022-03-03 15:59:57 database: disconnected session #6
+2022-03-03 15:59:57 database: disconnecting session #7
+2022-03-03 15:59:57 database: disconnected session #7
+2022-03-03 15:59:57 database: disconnecting session #8
+2022-03-03 15:59:57 database: disconnected session #8
+2022-03-03 15:59:57 database: disconnecting session #9
+2022-03-03 15:59:57 database: disconnected session #9
+2022-03-03 15:59:57 database: disconnecting session #10
+2022-03-03 15:59:57 database: disconnected session #10
+2022-03-03 15:59:57 database: disconnecting session #11
+2022-03-03 15:59:57 database: disconnected session #11
+2022-03-03 15:59:57 database: disconnecting session #12
+2022-03-03 15:59:58 database: closing C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 15:59:58 database: closed
+2022-03-03 16:00:02 database: opening C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2 (build 200)
+2022-03-03 16:00:02 database: opened C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:00:02 database: connecting session #3 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:00:02 jdbc[3]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:00:02 jdbc[3]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:00:02 jdbc[3]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:00:02 jdbc[3]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:00:02 jdbc[3]: 
+/**/Connection conn1 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:00:02 jdbc[3]: 
+/*SQL #:1 t:1*/CALL READONLY();
+2022-03-03 16:00:02 database: connecting session #4 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:00:02 jdbc[4]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:00:02 jdbc[4]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:00:02 jdbc[4]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:00:02 jdbc[4]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:00:02 jdbc[4]: 
+/**/Connection conn2 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:00:02 jdbc[4]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:00:02 database: connecting session #5 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:00:02 jdbc[5]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:00:02 jdbc[5]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:00:02 jdbc[5]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:00:02 jdbc[5]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:00:02 jdbc[5]: 
+/**/Connection conn3 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:00:02 jdbc[5]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:00:02 database: connecting session #6 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:00:02 jdbc[6]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:00:02 jdbc[6]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:00:02 jdbc[6]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:00:02 jdbc[6]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:00:02 jdbc[6]: 
+/**/Connection conn4 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:00:02 jdbc[6]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:00:02 database: connecting session #7 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:00:02 jdbc[7]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:00:02 jdbc[7]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:00:02 jdbc[7]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:00:02 jdbc[7]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:00:02 jdbc[7]: 
+/**/Connection conn5 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:00:02 jdbc[7]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:00:02 database: connecting session #8 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:00:02 jdbc[8]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:00:02 jdbc[8]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:00:02 jdbc[8]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:00:02 jdbc[8]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:00:02 jdbc[8]: 
+/**/Connection conn6 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:00:02 jdbc[8]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:00:02 database: connecting session #9 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:00:02 jdbc[9]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:00:02 jdbc[9]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:00:02 jdbc[9]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:00:02 jdbc[9]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:00:02 jdbc[9]: 
+/**/Connection conn7 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:00:02 jdbc[9]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:00:02 database: connecting session #10 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:00:02 jdbc[10]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:00:02 jdbc[10]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:00:02 jdbc[10]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:00:02 jdbc[10]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:00:02 jdbc[10]: 
+/**/Connection conn8 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:00:02 jdbc[10]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:00:02 database: connecting session #11 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:00:02 jdbc[11]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:00:02 jdbc[11]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:00:02 jdbc[11]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:00:02 jdbc[11]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:00:02 jdbc[11]: 
+/**/Connection conn9 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:00:02 jdbc[11]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:00:02 database: connecting session #12 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:00:02 jdbc[12]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:00:02 jdbc[12]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:00:02 jdbc[12]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:00:02 jdbc[12]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:00:02 jdbc[12]: 
+/**/Connection conn10 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:00:02 jdbc[12]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:00:02 jdbc[3]: 
+/*SQL l:78 #:4 t:1*/SELECT NAME, VALUE FROM INFORMATION_SCHEMA.SETTINGS WHERE NAME IN (?, ?, ?, ?) {1: 'MODE', 2: 'DATABASE_TO_UPPER', 3: 'DATABASE_TO_LOWER', 4: 'CASE_INSENSITIVE_IDENTIFIERS'};
+2022-03-03 16:00:02 jdbc[3]: 
+/*SQL #:1*/CALL DATABASE();
+2022-03-03 16:02:02 database: closing C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2 from shutdown hook
+2022-03-03 16:02:02 database: disconnecting session #3
+2022-03-03 16:02:02 database: disconnected session #3
+2022-03-03 16:02:02 database: disconnecting session #4
+2022-03-03 16:02:02 database: disconnected session #4
+2022-03-03 16:02:02 database: disconnecting session #5
+2022-03-03 16:02:02 database: disconnected session #5
+2022-03-03 16:02:02 database: disconnecting session #6
+2022-03-03 16:02:02 database: disconnected session #6
+2022-03-03 16:02:02 database: disconnecting session #7
+2022-03-03 16:02:02 database: disconnected session #7
+2022-03-03 16:02:02 database: disconnecting session #8
+2022-03-03 16:02:02 database: disconnected session #8
+2022-03-03 16:02:02 database: disconnecting session #9
+2022-03-03 16:02:02 database: disconnected session #9
+2022-03-03 16:02:02 database: disconnecting session #10
+2022-03-03 16:02:02 database: disconnected session #10
+2022-03-03 16:02:02 database: disconnecting session #11
+2022-03-03 16:02:02 database: disconnected session #11
+2022-03-03 16:02:02 database: disconnecting session #12
+2022-03-03 16:02:02 database: closing C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:02:02 database: closed
+2022-03-03 16:02:07 database: opening C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2 (build 200)
+2022-03-03 16:02:07 database: opened C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:02:07 database: connecting session #3 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:02:07 jdbc[3]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:02:07 jdbc[3]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:02:07 jdbc[3]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:02:07 jdbc[3]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:02:07 jdbc[3]: 
+/**/Connection conn1 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:02:07 jdbc[3]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:02:07 database: connecting session #4 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:02:07 jdbc[4]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:02:07 jdbc[4]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:02:07 jdbc[4]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:02:07 jdbc[4]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:02:07 jdbc[4]: 
+/**/Connection conn2 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:02:07 jdbc[4]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:02:07 database: connecting session #5 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:02:07 jdbc[5]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:02:07 jdbc[5]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:02:07 jdbc[5]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:02:07 jdbc[5]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:02:07 jdbc[5]: 
+/**/Connection conn3 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:02:07 jdbc[5]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:02:07 database: connecting session #6 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:02:07 jdbc[6]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:02:07 jdbc[6]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:02:07 jdbc[6]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:02:07 jdbc[6]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:02:07 jdbc[6]: 
+/**/Connection conn4 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:02:07 jdbc[6]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:02:07 database: connecting session #7 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:02:07 jdbc[7]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:02:07 jdbc[7]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:02:07 jdbc[7]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:02:07 jdbc[7]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:02:07 jdbc[7]: 
+/**/Connection conn5 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:02:07 jdbc[7]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:02:07 database: connecting session #8 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:02:07 jdbc[8]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:02:07 jdbc[8]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:02:07 jdbc[8]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:02:07 jdbc[8]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:02:07 jdbc[8]: 
+/**/Connection conn6 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:02:07 jdbc[8]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:02:07 database: connecting session #9 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:02:07 jdbc[9]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:02:07 jdbc[9]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:02:07 jdbc[9]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:02:07 jdbc[9]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:02:07 jdbc[9]: 
+/**/Connection conn7 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:02:07 jdbc[9]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:02:07 database: connecting session #10 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:02:07 jdbc[10]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:02:07 jdbc[10]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:02:07 jdbc[10]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:02:07 jdbc[10]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:02:07 jdbc[10]: 
+/**/Connection conn8 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:02:07 jdbc[10]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:02:07 database: connecting session #11 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:02:07 jdbc[11]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:02:07 jdbc[11]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:02:07 jdbc[11]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:02:07 jdbc[11]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:02:07 jdbc[11]: 
+/**/Connection conn9 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:02:07 jdbc[11]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:02:07 database: connecting session #12 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:02:07 jdbc[12]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:02:07 jdbc[12]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:02:07 jdbc[12]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:02:07 jdbc[12]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:02:07 jdbc[12]: 
+/**/Connection conn10 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:02:07 jdbc[12]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:02:08 jdbc[3]: 
+/*SQL l:78 #:4 t:2*/SELECT NAME, VALUE FROM INFORMATION_SCHEMA.SETTINGS WHERE NAME IN (?, ?, ?, ?) {1: 'MODE', 2: 'DATABASE_TO_UPPER', 3: 'DATABASE_TO_LOWER', 4: 'CASE_INSENSITIVE_IDENTIFIERS'};
+2022-03-03 16:02:08 jdbc[3]: 
+/*SQL #:1*/CALL DATABASE();
+2022-03-03 16:02:23 database: connecting session #13 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:02:23 jdbc[13]: 
+/**/Connection conn11 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;;FORBID_CREATION=TRUE", "", "");
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:78 #:4 t:1*/SELECT NAME, VALUE FROM INFORMATION_SCHEMA.SETTINGS WHERE NAME IN (?, ?, ?, ?) {1: 'MODE', 2: 'DATABASE_TO_UPPER', 3: 'DATABASE_TO_LOWER', 4: 'CASE_INSENSITIVE_IDENTIFIERS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL #:2*/SELECT SCHEMA_NAME TABLE_SCHEM, CATALOG_NAME TABLE_CATALOG,  IS_DEFAULT FROM INFORMATION_SCHEMA.SCHEMATA ORDER BY SCHEMA_NAME;
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL #:2*/SELECT SCHEMA_NAME TABLE_SCHEM, CATALOG_NAME TABLE_CATALOG,  IS_DEFAULT FROM INFORMATION_SCHEMA.SCHEMATA ORDER BY SCHEMA_NAME;
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:1007 #:33 t:7*/SELECT TABLE_CAT, TABLE_SCHEM, TABLE_NAME, TABLE_TYPE, REMARKS, TYPE_CAT, TYPE_SCHEM, TYPE_NAME, SELF_REFERENCING_COL_NAME, REF_GENERATION, SQL FROM (SELECT SYNONYM_CATALOG TABLE_CAT, SYNONYM_SCHEMA TABLE_SCHEM, SYNONYM_NAME as TABLE_NAME, TYPE_NAME AS TABLE_TYPE, REMARKS, TYPE_NAME TYPE_CAT, TYPE_NAME TYPE_SCHEM, TYPE_NAME AS TYPE_NAME, TYPE_NAME SELF_REFERENCING_COL_NAME, TYPE_NAME REF_GENERATION, NULL AS SQL FROM INFORMATION_SCHEMA.SYNONYMS WHERE SYNONYM_CATALOG LIKE ?1 ESCAPE ?4 AND SYNONYM_SCHEMA LIKE ?2 ESCAPE ?4 AND SYNONYM_NAME LIKE ?3 ESCAPE ?4 UNION SELECT TABLE_CATALOG TABLE_CAT, TABLE_SCHEMA TABLE_SCHEM, TABLE_NAME, TABLE_TYPE, REMARKS, TYPE_NAME TYPE_CAT, TYPE_NAME TYPE_SCHEM, TYPE_NAME, TYPE_NAME SELF_REFERENCING_COL_NAME, TYPE_NAME REF_GENERATION, SQL FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_CATALOG LIKE ?1 ESCAPE ?4 AND TABLE_SCHEMA LIKE ?2 ESCAPE ?4 AND TABLE_NAME LIKE ?3 ESCAPE ?4 AND TABLE_TYPE IN(?5, ?6, ?7, ?8, ?9, ?10, ?11)) ORDER BY TABLE_TYPE, TABLE_SCHEM, TABLE_NAME {1: '%', 2: 'INFORMATION_SCHEMA', 3: '%', 4: '\\', 5: 'TABLE', 6: 'SYSTEM TABLE', 7: 'VIEW', 8: 'SYSTEM VIEW', 9: 'TABLE LINK', 10: 'SYNONYM', 11: 'EXTERNAL'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:1*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'CATALOGS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:2 t:3*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'COLLATIONS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:32*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'COLUMNS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:8 t:1*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'COLUMN_PRIVILEGES'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:7*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'CONSTANTS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:13*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'CONSTRAINTS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:14*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'CROSS_REFERENCES'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:14*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'DOMAINS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:12*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'FUNCTION_ALIASES'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:17 t:9*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'FUNCTION_COLUMNS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:5*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'HELP'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:22*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'INDEXES'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:2*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'IN_DOUBT'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:9*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'KEY_COLUMN_USAGE'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:4*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'LOCKS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:12*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'QUERY_STATISTICS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:9*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'REFERENTIAL_CONSTRAINTS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:7*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'RIGHTS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:3*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'ROLES'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:8*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SCHEMATA'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:12*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SEQUENCES'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:12*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SESSIONS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:2*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SESSION_STATE'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:2*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SETTINGS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:9*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SYNONYMS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:12*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TABLES'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:9*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TABLE_CONSTRAINTS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:7*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TABLE_PRIVILEGES'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:1*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TABLE_TYPES'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:14*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TRIGGERS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:14*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TYPE_INFO'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:4*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'USERS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:123 #:9*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'VIEWS'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:438*/SELECT ALIAS_CATALOG PROCEDURE_CAT, ALIAS_SCHEMA PROCEDURE_SCHEM, ALIAS_NAME PROCEDURE_NAME, COLUMN_COUNT NUM_INPUT_PARAMS, ZERO() NUM_OUTPUT_PARAMS, ZERO() NUM_RESULT_SETS, REMARKS, RETURNS_RESULT PROCEDURE_TYPE, ALIAS_NAME SPECIFIC_NAME FROM INFORMATION_SCHEMA.FUNCTION_ALIASES WHERE ALIAS_CATALOG LIKE ? ESCAPE ? AND ALIAS_SCHEMA LIKE ? ESCAPE ? AND ALIAS_NAME LIKE ? ESCAPE ? ORDER BY PROCEDURE_SCHEM, PROCEDURE_NAME, NUM_INPUT_PARAMS {1: '%', 2: '\\', 3: 'INFORMATION_SCHEMA', 4: '\\', 5: '%', 6: '\\'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:1007*/SELECT TABLE_CAT, TABLE_SCHEM, TABLE_NAME, TABLE_TYPE, REMARKS, TYPE_CAT, TYPE_SCHEM, TYPE_NAME, SELF_REFERENCING_COL_NAME, REF_GENERATION, SQL FROM (SELECT SYNONYM_CATALOG TABLE_CAT, SYNONYM_SCHEMA TABLE_SCHEM, SYNONYM_NAME as TABLE_NAME, TYPE_NAME AS TABLE_TYPE, REMARKS, TYPE_NAME TYPE_CAT, TYPE_NAME TYPE_SCHEM, TYPE_NAME AS TYPE_NAME, TYPE_NAME SELF_REFERENCING_COL_NAME, TYPE_NAME REF_GENERATION, NULL AS SQL FROM INFORMATION_SCHEMA.SYNONYMS WHERE SYNONYM_CATALOG LIKE ?1 ESCAPE ?4 AND SYNONYM_SCHEMA LIKE ?2 ESCAPE ?4 AND SYNONYM_NAME LIKE ?3 ESCAPE ?4 UNION SELECT TABLE_CATALOG TABLE_CAT, TABLE_SCHEMA TABLE_SCHEM, TABLE_NAME, TABLE_TYPE, REMARKS, TYPE_NAME TYPE_CAT, TYPE_NAME TYPE_SCHEM, TYPE_NAME, TYPE_NAME SELF_REFERENCING_COL_NAME, TYPE_NAME REF_GENERATION, SQL FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_CATALOG LIKE ?1 ESCAPE ?4 AND TABLE_SCHEMA LIKE ?2 ESCAPE ?4 AND TABLE_NAME LIKE ?3 ESCAPE ?4 AND TABLE_TYPE IN(?5, ?6, ?7, ?8, ?9, ?10, ?11)) ORDER BY TABLE_TYPE, TABLE_SCHEM, TABLE_NAME {1: '%', 2: 'PUBLIC', 3: '%', 4: '\\', 5: 'TABLE', 6: 'SYSTEM TABLE', 7: 'VIEW', 8: 'SYSTEM VIEW', 9: 'TABLE LINK', 10: 'SYNONYM', 11: 'EXTERNAL'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL l:438*/SELECT ALIAS_CATALOG PROCEDURE_CAT, ALIAS_SCHEMA PROCEDURE_SCHEM, ALIAS_NAME PROCEDURE_NAME, COLUMN_COUNT NUM_INPUT_PARAMS, ZERO() NUM_OUTPUT_PARAMS, ZERO() NUM_RESULT_SETS, REMARKS, RETURNS_RESULT PROCEDURE_TYPE, ALIAS_NAME SPECIFIC_NAME FROM INFORMATION_SCHEMA.FUNCTION_ALIASES WHERE ALIAS_CATALOG LIKE ? ESCAPE ? AND ALIAS_SCHEMA LIKE ? ESCAPE ? AND ALIAS_NAME LIKE ? ESCAPE ? ORDER BY PROCEDURE_SCHEM, PROCEDURE_NAME, NUM_INPUT_PARAMS {1: '%', 2: '\\', 3: 'PUBLIC', 4: '\\', 5: '%', 6: '\\'};
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL */SELECT * FROM INFORMATION_SCHEMA.SEQUENCES ORDER BY SEQUENCE_NAME;
+2022-03-03 16:02:23 jdbc[13]: 
+/*SQL #:1*/SELECT * FROM INFORMATION_SCHEMA.USERS ORDER BY NAME;
+2022-03-03 16:03:53 database: closing C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2 from shutdown hook
+2022-03-03 16:03:53 database: disconnecting session #3
+2022-03-03 16:03:53 database: disconnected session #3
+2022-03-03 16:03:53 database: disconnecting session #4
+2022-03-03 16:03:53 database: disconnected session #4
+2022-03-03 16:03:53 database: disconnecting session #5
+2022-03-03 16:03:53 database: disconnected session #5
+2022-03-03 16:03:53 database: disconnecting session #6
+2022-03-03 16:03:53 database: disconnected session #6
+2022-03-03 16:03:53 database: disconnecting session #7
+2022-03-03 16:03:53 database: disconnected session #7
+2022-03-03 16:03:53 database: disconnecting session #8
+2022-03-03 16:03:53 database: disconnected session #8
+2022-03-03 16:03:53 database: disconnecting session #9
+2022-03-03 16:03:53 database: disconnected session #9
+2022-03-03 16:03:53 database: disconnecting session #10
+2022-03-03 16:03:53 database: disconnected session #10
+2022-03-03 16:03:53 database: disconnecting session #11
+2022-03-03 16:03:53 database: disconnected session #11
+2022-03-03 16:03:53 database: disconnecting session #12
+2022-03-03 16:03:53 database: disconnected session #12
+2022-03-03 16:03:53 database: disconnecting session #13
+2022-03-03 16:03:53 database: closing C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:03:53 database: closed
+2022-03-03 16:03:58 database: opening C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2 (build 200)
+2022-03-03 16:03:58 database: opened C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:03:58 database: connecting session #3 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:03:58 jdbc[3]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:03:58 jdbc[3]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:03:58 jdbc[3]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:03:58 jdbc[3]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:03:58 jdbc[3]: 
+/**/Connection conn1 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:03:58 jdbc[3]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:03:58 database: connecting session #4 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:03:58 jdbc[4]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:03:58 jdbc[4]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:03:58 jdbc[4]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:03:58 jdbc[4]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:03:58 jdbc[4]: 
+/**/Connection conn2 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:03:58 jdbc[4]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:03:58 database: connecting session #5 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:03:58 jdbc[5]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:03:58 jdbc[5]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:03:58 jdbc[5]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:03:58 jdbc[5]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:03:58 jdbc[5]: 
+/**/Connection conn3 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:03:58 jdbc[5]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:03:58 database: connecting session #6 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:03:58 jdbc[6]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:03:58 jdbc[6]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:03:58 jdbc[6]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:03:58 jdbc[6]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:03:58 jdbc[6]: 
+/**/Connection conn4 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:03:58 jdbc[6]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:03:58 database: connecting session #7 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:03:58 jdbc[7]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:03:58 jdbc[7]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:03:58 jdbc[7]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:03:58 jdbc[7]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:03:58 jdbc[7]: 
+/**/Connection conn5 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:03:58 jdbc[7]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:03:58 database: connecting session #8 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:03:58 jdbc[8]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:03:58 jdbc[8]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:03:58 jdbc[8]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:03:58 jdbc[8]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:03:58 jdbc[8]: 
+/**/Connection conn6 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:03:58 jdbc[8]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:03:58 database: connecting session #9 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:03:58 jdbc[9]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:03:58 jdbc[9]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:03:58 jdbc[9]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:03:58 jdbc[9]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:03:58 jdbc[9]: 
+/**/Connection conn7 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:03:58 jdbc[9]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:03:58 database: connecting session #10 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:03:58 jdbc[10]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:03:58 jdbc[10]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:03:58 jdbc[10]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:03:58 jdbc[10]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:03:58 jdbc[10]: 
+/**/Connection conn8 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:03:58 jdbc[10]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:03:58 database: connecting session #11 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:03:58 jdbc[11]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:03:58 jdbc[11]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:03:58 jdbc[11]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:03:58 jdbc[11]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:03:58 jdbc[11]: 
+/**/Connection conn9 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:03:58 jdbc[11]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:03:58 database: connecting session #12 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:03:58 jdbc[12]: 
+/*SQL */SET AUTO_SERVER TRUE;
+2022-03-03 16:03:58 jdbc[12]: 
+/*SQL */SET TRACE_LEVEL_SYSTEM_OUT 2;
+2022-03-03 16:03:58 jdbc[12]: 
+/*SQL */SET DB_CLOSE_DELAY -1;
+2022-03-03 16:03:58 jdbc[12]: 
+/*SQL */SET TRACE_LEVEL_FILE 2;
+2022-03-03 16:03:58 jdbc[12]: 
+/**/Connection conn10 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;AUTO_SERVER=TRUE;TRACE_LEVEL_FILE=2;TRACE_LEVEL_SYSTEM_OUT=2;DB_CLOSE_DELAY=-1;", "", "");
+2022-03-03 16:03:58 jdbc[12]: 
+/*SQL #:1*/CALL READONLY();
+2022-03-03 16:03:58 jdbc[3]: 
+/*SQL l:78 #:4 t:1*/SELECT NAME, VALUE FROM INFORMATION_SCHEMA.SETTINGS WHERE NAME IN (?, ?, ?, ?) {1: 'MODE', 2: 'DATABASE_TO_UPPER', 3: 'DATABASE_TO_LOWER', 4: 'CASE_INSENSITIVE_IDENTIFIERS'};
+2022-03-03 16:03:58 jdbc[3]: 
+/*SQL #:1*/CALL DATABASE();
+2022-03-03 16:03:59 jdbc[3]: 
+/*SQL */drop table if exists livreur CASCADE;
+2022-03-03 16:03:59 jdbc[3]: 
+/*SQL */drop table if exists livreur_secteurs CASCADE;
+2022-03-03 16:03:59 jdbc[3]: 
+/*SQL */drop table if exists secteur CASCADE;
+2022-03-03 16:03:59 jdbc[3]: 
+/*SQL t:3*/create table livreur (id integer generated by default as identity, adresse varchar(255), name varchar(255), prenom varchar(255), primary key (id));
+2022-03-03 16:03:59 jdbc[3]: 
+/*SQL */create table livreur_secteurs (livreurs_id integer not null, secteurs_id integer not null);
+2022-03-03 16:03:59 jdbc[3]: 
+/*SQL */create table secteur (id integer generated by default as identity, adresse varchar(255), name varchar(255), primary key (id));
+2022-03-03 16:03:59 jdbc[3]: 
+/*SQL t:7*/alter table livreur_secteurs add constraint FKnlmwv78vr8ku3gcns4do20s9i foreign key (secteurs_id) references secteur;
+2022-03-03 16:03:59 jdbc[3]: 
+/*SQL */alter table livreur_secteurs add constraint FKgppl8n5dq12j2abof7retl81h foreign key (livreurs_id) references livreur;
+2022-03-03 16:04:11 database: connecting session #13 to C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:04:11 jdbc[13]: 
+/**/Connection conn11 = DriverManager.getConnection("jdbc:h2:file:./local-db.h2;;FORBID_CREATION=TRUE", "", "");
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:78 #:4 t:1*/SELECT NAME, VALUE FROM INFORMATION_SCHEMA.SETTINGS WHERE NAME IN (?, ?, ?, ?) {1: 'MODE', 2: 'DATABASE_TO_UPPER', 3: 'DATABASE_TO_LOWER', 4: 'CASE_INSENSITIVE_IDENTIFIERS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL #:2*/SELECT SCHEMA_NAME TABLE_SCHEM, CATALOG_NAME TABLE_CATALOG,  IS_DEFAULT FROM INFORMATION_SCHEMA.SCHEMATA ORDER BY SCHEMA_NAME;
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL #:2*/SELECT SCHEMA_NAME TABLE_SCHEM, CATALOG_NAME TABLE_CATALOG,  IS_DEFAULT FROM INFORMATION_SCHEMA.SCHEMATA ORDER BY SCHEMA_NAME;
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:1007 #:33 t:3*/SELECT TABLE_CAT, TABLE_SCHEM, TABLE_NAME, TABLE_TYPE, REMARKS, TYPE_CAT, TYPE_SCHEM, TYPE_NAME, SELF_REFERENCING_COL_NAME, REF_GENERATION, SQL FROM (SELECT SYNONYM_CATALOG TABLE_CAT, SYNONYM_SCHEMA TABLE_SCHEM, SYNONYM_NAME as TABLE_NAME, TYPE_NAME AS TABLE_TYPE, REMARKS, TYPE_NAME TYPE_CAT, TYPE_NAME TYPE_SCHEM, TYPE_NAME AS TYPE_NAME, TYPE_NAME SELF_REFERENCING_COL_NAME, TYPE_NAME REF_GENERATION, NULL AS SQL FROM INFORMATION_SCHEMA.SYNONYMS WHERE SYNONYM_CATALOG LIKE ?1 ESCAPE ?4 AND SYNONYM_SCHEMA LIKE ?2 ESCAPE ?4 AND SYNONYM_NAME LIKE ?3 ESCAPE ?4 UNION SELECT TABLE_CATALOG TABLE_CAT, TABLE_SCHEMA TABLE_SCHEM, TABLE_NAME, TABLE_TYPE, REMARKS, TYPE_NAME TYPE_CAT, TYPE_NAME TYPE_SCHEM, TYPE_NAME, TYPE_NAME SELF_REFERENCING_COL_NAME, TYPE_NAME REF_GENERATION, SQL FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_CATALOG LIKE ?1 ESCAPE ?4 AND TABLE_SCHEMA LIKE ?2 ESCAPE ?4 AND TABLE_NAME LIKE ?3 ESCAPE ?4 AND TABLE_TYPE IN(?5, ?6, ?7, ?8, ?9, ?10, ?11)) ORDER BY TABLE_TYPE, TABLE_SCHEM, TABLE_NAME {1: '%', 2: 'INFORMATION_SCHEMA', 3: '%', 4: '\\', 5: 'TABLE', 6: 'SYSTEM TABLE', 7: 'VIEW', 8: 'SYSTEM VIEW', 9: 'TABLE LINK', 10: 'SYNONYM', 11: 'EXTERNAL'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:1*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'CATALOGS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:2*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'COLLATIONS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:32*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'COLUMNS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:8*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'COLUMN_PRIVILEGES'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:7*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'CONSTANTS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:13*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'CONSTRAINTS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:14*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'CROSS_REFERENCES'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:14*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'DOMAINS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:12*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'FUNCTION_ALIASES'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:17 t:20*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'FUNCTION_COLUMNS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:5*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'HELP'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:22*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'INDEXES'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:2*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'IN_DOUBT'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:9*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'KEY_COLUMN_USAGE'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:4*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'LOCKS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:12*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'QUERY_STATISTICS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:9*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'REFERENTIAL_CONSTRAINTS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:7*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'RIGHTS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:3*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'ROLES'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:8*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SCHEMATA'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:12*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SEQUENCES'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:12*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SESSIONS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:2*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SESSION_STATE'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:2*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SETTINGS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:9*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'SYNONYMS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:12*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TABLES'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:9*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TABLE_CONSTRAINTS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:7*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TABLE_PRIVILEGES'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:1*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TABLE_TYPES'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:14*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TRIGGERS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:14*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'TYPE_INFO'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:4*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'USERS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:9*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'INFORMATION_SCHEMA', 2: 'VIEWS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:438*/SELECT ALIAS_CATALOG PROCEDURE_CAT, ALIAS_SCHEMA PROCEDURE_SCHEM, ALIAS_NAME PROCEDURE_NAME, COLUMN_COUNT NUM_INPUT_PARAMS, ZERO() NUM_OUTPUT_PARAMS, ZERO() NUM_RESULT_SETS, REMARKS, RETURNS_RESULT PROCEDURE_TYPE, ALIAS_NAME SPECIFIC_NAME FROM INFORMATION_SCHEMA.FUNCTION_ALIASES WHERE ALIAS_CATALOG LIKE ? ESCAPE ? AND ALIAS_SCHEMA LIKE ? ESCAPE ? AND ALIAS_NAME LIKE ? ESCAPE ? ORDER BY PROCEDURE_SCHEM, PROCEDURE_NAME, NUM_INPUT_PARAMS {1: '%', 2: '\\', 3: 'INFORMATION_SCHEMA', 4: '\\', 5: '%', 6: '\\'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:1007 #:3*/SELECT TABLE_CAT, TABLE_SCHEM, TABLE_NAME, TABLE_TYPE, REMARKS, TYPE_CAT, TYPE_SCHEM, TYPE_NAME, SELF_REFERENCING_COL_NAME, REF_GENERATION, SQL FROM (SELECT SYNONYM_CATALOG TABLE_CAT, SYNONYM_SCHEMA TABLE_SCHEM, SYNONYM_NAME as TABLE_NAME, TYPE_NAME AS TABLE_TYPE, REMARKS, TYPE_NAME TYPE_CAT, TYPE_NAME TYPE_SCHEM, TYPE_NAME AS TYPE_NAME, TYPE_NAME SELF_REFERENCING_COL_NAME, TYPE_NAME REF_GENERATION, NULL AS SQL FROM INFORMATION_SCHEMA.SYNONYMS WHERE SYNONYM_CATALOG LIKE ?1 ESCAPE ?4 AND SYNONYM_SCHEMA LIKE ?2 ESCAPE ?4 AND SYNONYM_NAME LIKE ?3 ESCAPE ?4 UNION SELECT TABLE_CATALOG TABLE_CAT, TABLE_SCHEMA TABLE_SCHEM, TABLE_NAME, TABLE_TYPE, REMARKS, TYPE_NAME TYPE_CAT, TYPE_NAME TYPE_SCHEM, TYPE_NAME, TYPE_NAME SELF_REFERENCING_COL_NAME, TYPE_NAME REF_GENERATION, SQL FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_CATALOG LIKE ?1 ESCAPE ?4 AND TABLE_SCHEMA LIKE ?2 ESCAPE ?4 AND TABLE_NAME LIKE ?3 ESCAPE ?4 AND TABLE_TYPE IN(?5, ?6, ?7, ?8, ?9, ?10, ?11)) ORDER BY TABLE_TYPE, TABLE_SCHEM, TABLE_NAME {1: '%', 2: 'PUBLIC', 3: '%', 4: '\\', 5: 'TABLE', 6: 'SYSTEM TABLE', 7: 'VIEW', 8: 'SYSTEM VIEW', 9: 'TABLE LINK', 10: 'SYNONYM', 11: 'EXTERNAL'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:4*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'PUBLIC', 2: 'LIVREUR'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:2*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'PUBLIC', 2: 'LIVREUR_SECTEURS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:123 #:3*/SELECT COLUMN_NAME, ORDINAL_POSITION, COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = ? AND TABLE_NAME = ? {1: 'PUBLIC', 2: 'SECTEUR'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:438*/SELECT ALIAS_CATALOG PROCEDURE_CAT, ALIAS_SCHEMA PROCEDURE_SCHEM, ALIAS_NAME PROCEDURE_NAME, COLUMN_COUNT NUM_INPUT_PARAMS, ZERO() NUM_OUTPUT_PARAMS, ZERO() NUM_RESULT_SETS, REMARKS, RETURNS_RESULT PROCEDURE_TYPE, ALIAS_NAME SPECIFIC_NAME FROM INFORMATION_SCHEMA.FUNCTION_ALIASES WHERE ALIAS_CATALOG LIKE ? ESCAPE ? AND ALIAS_SCHEMA LIKE ? ESCAPE ? AND ALIAS_NAME LIKE ? ESCAPE ? ORDER BY PROCEDURE_SCHEM, PROCEDURE_NAME, NUM_INPUT_PARAMS {1: '%', 2: '\\', 3: 'PUBLIC', 4: '\\', 5: '%', 6: '\\'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:433 #:1*/SELECT TABLE_CATALOG TABLE_CAT, TABLE_SCHEMA TABLE_SCHEM, TABLE_NAME, NON_UNIQUE, TABLE_CATALOG INDEX_QUALIFIER, INDEX_NAME, INDEX_TYPE TYPE, ORDINAL_POSITION, COLUMN_NAME, ASC_OR_DESC, CARDINALITY, PAGES, FILTER_CONDITION, SORT_TYPE FROM INFORMATION_SCHEMA.INDEXES WHERE TABLE_CATALOG LIKE ? ESCAPE ? AND TABLE_SCHEMA LIKE ? ESCAPE ? AND (TRUE) AND TABLE_NAME = ? ORDER BY NON_UNIQUE, TYPE, TABLE_SCHEM, INDEX_NAME, ORDINAL_POSITION {1: '%', 2: '\\', 3: 'PUBLIC', 4: '\\', 5: 'LIVREUR'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:433 #:2*/SELECT TABLE_CATALOG TABLE_CAT, TABLE_SCHEMA TABLE_SCHEM, TABLE_NAME, NON_UNIQUE, TABLE_CATALOG INDEX_QUALIFIER, INDEX_NAME, INDEX_TYPE TYPE, ORDINAL_POSITION, COLUMN_NAME, ASC_OR_DESC, CARDINALITY, PAGES, FILTER_CONDITION, SORT_TYPE FROM INFORMATION_SCHEMA.INDEXES WHERE TABLE_CATALOG LIKE ? ESCAPE ? AND TABLE_SCHEMA LIKE ? ESCAPE ? AND (TRUE) AND TABLE_NAME = ? ORDER BY NON_UNIQUE, TYPE, TABLE_SCHEM, INDEX_NAME, ORDINAL_POSITION {1: '%', 2: '\\', 3: 'PUBLIC', 4: '\\', 5: 'LIVREUR_SECTEURS'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL l:433 #:1*/SELECT TABLE_CATALOG TABLE_CAT, TABLE_SCHEMA TABLE_SCHEM, TABLE_NAME, NON_UNIQUE, TABLE_CATALOG INDEX_QUALIFIER, INDEX_NAME, INDEX_TYPE TYPE, ORDINAL_POSITION, COLUMN_NAME, ASC_OR_DESC, CARDINALITY, PAGES, FILTER_CONDITION, SORT_TYPE FROM INFORMATION_SCHEMA.INDEXES WHERE TABLE_CATALOG LIKE ? ESCAPE ? AND TABLE_SCHEMA LIKE ? ESCAPE ? AND (TRUE) AND TABLE_NAME = ? ORDER BY NON_UNIQUE, TYPE, TABLE_SCHEM, INDEX_NAME, ORDINAL_POSITION {1: '%', 2: '\\', 3: 'PUBLIC', 4: '\\', 5: 'SECTEUR'};
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL #:2*/SELECT * FROM INFORMATION_SCHEMA.SEQUENCES ORDER BY SEQUENCE_NAME;
+2022-03-03 16:04:11 jdbc[13]: 
+/*SQL #:1*/SELECT * FROM INFORMATION_SCHEMA.USERS ORDER BY NAME;
+2022-03-03 16:04:42 database: closing C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2 from shutdown hook
+2022-03-03 16:04:42 database: disconnecting session #3
+2022-03-03 16:04:42 database: disconnected session #3
+2022-03-03 16:04:42 database: disconnecting session #4
+2022-03-03 16:04:42 database: disconnected session #4
+2022-03-03 16:04:42 database: disconnecting session #5
+2022-03-03 16:04:42 database: disconnected session #5
+2022-03-03 16:04:42 database: disconnecting session #6
+2022-03-03 16:04:42 database: disconnected session #6
+2022-03-03 16:04:42 database: disconnecting session #7
+2022-03-03 16:04:42 database: disconnected session #7
+2022-03-03 16:04:42 database: disconnecting session #8
+2022-03-03 16:04:42 database: disconnected session #8
+2022-03-03 16:04:42 database: disconnecting session #9
+2022-03-03 16:04:42 database: disconnected session #9
+2022-03-03 16:04:42 database: disconnecting session #10
+2022-03-03 16:04:42 database: disconnected session #10
+2022-03-03 16:04:42 database: disconnecting session #11
+2022-03-03 16:04:42 database: disconnected session #11
+2022-03-03 16:04:42 database: disconnecting session #12
+2022-03-03 16:04:42 database: disconnected session #12
+2022-03-03 16:04:42 database: disconnecting session #13
+2022-03-03 16:04:42 database: closing C:/Users/diall/OneDrive/Documents/diaspotea/local-db.h2
+2022-03-03 16:04:42 database: closed
