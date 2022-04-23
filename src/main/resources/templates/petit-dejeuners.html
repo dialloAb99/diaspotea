@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: header-css"/>
+    <meta charset="UTF-8">
+    <title>Petit-Dejeuner</title>
+    <!--c'est le chemin pour qu'il telecharge le fichier demander -->
+    <script type="text/javascript" th:src="@{/resources/js/panier.js}"></script>
+</head>
+<body>
+<div th:replace="fragments/header :: menu(activeTab='home')"/>
+<ul>
+    <li  th:each="petitDejeuner :${petitDejeuners}">
+        <p th:text="${petitDejeuner.nom}"></p>
+
+        <button th:onclick="'ajouterAuPanier('+${petitDejeuner.id}+');'" >ajouter au panier</button>
+
+    </li>
+</ul>
+
+</body>
+</html>

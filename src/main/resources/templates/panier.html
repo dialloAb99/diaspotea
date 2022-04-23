@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: header-css"/>
+    <meta charset="UTF-8">
+    <title>Mon panier</title>
+</head>
+<body>
+<div th:replace="fragments/header :: menu(activeTab='home')"/>
+<h1>Panier</h1>
+<section >
+    <header>Mon adresse de livraison</header>
+    <p th:text="${client.adresse}+' etage'+${client.etage}+' '+${client.codePostale}+' '+${client.ville}"></p>
+    <a href="#">modifier</a>
+    <p>Date de livrasion</p>
+</section>
+<section>
+    <ul>
+        <li th:each="ligneDeCommande : ${panier.ligneDeCommandes}">
+           <span><span th:text="${ligneDeCommande.produit.nom}"></span><span th:text="' quantiter:'+${ligneDeCommande.quantiter}"></span></span>
+            <span><span th:text="${ligneDeCommande.prix}+'€   '"></span><span th:text="'taille:'+${ligneDeCommande.taille.name}"></span></span>
+        </li>
+    </ul>
+</section>
+
+</body>
+</html>
