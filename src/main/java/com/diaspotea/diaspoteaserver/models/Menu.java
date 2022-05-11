@@ -20,4 +20,6 @@ public class Menu {
     private  float prix;
     @ManyToMany(mappedBy = "menus")
     private List<Produit> produits;
+    @OneToMany(mappedBy = "menu")
+    private List<LigneDeCommandeMenu> ligneDeCommandeMenus;
 }

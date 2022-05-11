@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <div th:replace="fragments/header :: header-css"/>
     <meta charset="UTF-8">
@@ -8,12 +8,23 @@
     <script type="text/javascript" th:src="@{/resources/js/panier.js}"></script>
 </head>
 <body>
-<div th:replace="fragments/header :: menu(activeTab='home')"/>
+<div th:replace="fragments/header :: menu(activeTab='petit-dejeuner')"/>
 <ul>
     <li  th:each="petitDejeuner :${petitDejeuners}">
         <p th:text="${petitDejeuner.nom}"></p>
+        <form th:action="@{/panier/ajouter/menu}" method="post" th:object="${menuDto}">
+            <p th:if="${#fields.hasErrors('menuId')}" th:errors="*{menuId}"></p>
+            <input type="text" name="menuId"  th:value="${petitDejeuner.id}" hidden=""></input>
+            <p th:if="${#fields.hasErrors('menuId')}" th:errors="*{menuId}"></p>
+            <select name="quantiter" >
+                <option value="">choix de la quantiter</option>
+                <option th:each="quantite :${#numbers.sequence(1, 10)}"     th:value="${quantite}" th:text="${quantite}"></option>
+            </select>
+            <button >ajouter au panier</button>
+        </form>
 
-        <button th:onclick="'ajouterAuPanier('+${petitDejeuner.id}+');'" >ajouter au panier</button>
+
+
 
     </li>
 </ul>

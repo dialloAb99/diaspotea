@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="icon" type="image/x-icon"  th:href="@{/favicon.ico}">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title th:text="${title ?: 'DiaspoTea'}"></title>
 
         <!-- Bootstrap core CSS -->
@@ -18,14 +18,14 @@
     </th:block>
 </head>
 <body>
-<nav id="nav" th:fragment="menu" class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav id=" nav" th:fragment="menu" class="navbar navbar-expand-md navbar-dark bg-dark">
     <ul>
-        <li><a href="/">Page d'acceuil</a></li>
-        <li><a href="/petit-dejeuner">Petit-dejeuner</a></li>
-        <li><a href="/dessert">Dessert</a></li>
-        <li><a href="/boisson">Boisson</a></li>
-        <li><a href="/moncompte">Mon Compte</a></li>
-        <li><a href="/monpanier/2">Mon Panier</a></li>
+        <li class="nav-item" th:class="${activeTab == 'home' ? 'active' : null}" ><a class="nav-link" href="/">Page d'acceuil</a></li>
+        <li class="nav-item" th:class="${activeTab == 'petit-dejeuner' ? 'active' : null}"><a class="nav-link" href="/petit-dejeuner">Petit-dejeuner</a></li>
+        <li class="nav-item" th:class="${activeTab == 'dessert' ? 'active' : null}"><a class="nav-link" href="/dessert">Dessert</a></li>
+        <li  class="nav-item" th:class="${activeTab == 'boisson' ? 'active' : null}"><a class="nav-link" href="/boisson">Boisson</a></li>
+        <li class="nav-item"  th:class="${activeTab == 'moncompte' ? 'active' : null}"><a class="nav-link" href="/moncompte">Mon Compte</a></li>
+        <li ><a href="/monpanier/2">Mon Panier</a></li>
     </ul>
     </nav>
 

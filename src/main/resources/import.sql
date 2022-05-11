@@ -32,14 +32,14 @@ INSERT INTO client (id, adresse, code_postale, etage, mail, nom, numero_tel, pre
 INSERT INTO panier (id,client_id,etat_Panier) VALUES (1,1,true);
 UPDATE  utilisateur SET livreur_id=2 where id=3;
 
-INSERT INTO commande (id, adresse_livraison, date_commande, date_livraison, client_id, livreur_id) VALUES (4, '141 rue des tilleuls 94470 boissy', '2022-02-14 15:16:22.000000', '2022-02-14 15:30:11.000000', 1 2);
+INSERT INTO commande (id, adresse_livraison, date_commande, date_livraison, client_id, livreur_id) VALUES (4, '141 rue des tilleuls 94470 boissy', '2022-02-14 15:16:22.000000', '2022-02-14 15:30:11.000000', 1,2);
 INSERT INTO taille (id, name) VALUES (10, '15cl');
 INSERT INTO taille (id, name) VALUES (1, '20cl');
 INSERT INTO taille (id, name) VALUES (2, '50cl');
 INSERT INTO taille (id, name) VALUES (4, '1/par');
 INSERT INTO taille (id, name) VALUES (5, 'lot de 3');
 
-INSERT INTO ligne_de_commande (id, prix, quantiter, commande_id, produit_id, taille_id, panier_id) VALUES  (9, 5.8, 2, 4, 1, 10,1);
+INSERT INTO ligne_de_commande (id, prix, quantiter, commande_id, produit_id, taille_id, panier_id,type ) VALUES  (9, 2.9, 2, 4, 1, 10,1,'ligneDeCommandeProduit');
 INSERT INTO commune(id,nom,code_postale) values(1,'sucy','94450');
 
 

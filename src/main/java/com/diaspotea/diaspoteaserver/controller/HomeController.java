@@ -1,5 +1,7 @@
 package com.diaspotea.diaspoteaserver.controller;
 
+import com.diaspotea.diaspoteaserver.dto.MenuDto;
+import com.diaspotea.diaspoteaserver.dto.ProduitDTO;
 import com.diaspotea.diaspoteaserver.models.Categorie;
 import com.diaspotea.diaspoteaserver.models.Menu;
 import com.diaspotea.diaspoteaserver.models.Produit;
@@ -44,6 +46,9 @@ public class HomeController {
         Categorie categorie=categorieService.getCategorie(1);
         produits=produitService.recupererProduitParCategorie(categorie);
         model.addAttribute("boissons",produits);
+        if (!model.containsAttribute("produitDTO")) {
+            model.addAttribute("produitDTO", new ProduitDTO());
+        }
         return "boissons";
     }
     @GetMapping("/dessert")
@@ -56,12 +61,18 @@ public class HomeController {
         desserts=produitService.recupererProduitParCategorie(categorie);
 //        j'ai ajouter un attribut dessert qui porte comme valeur la liste de dessert'
         model.addAttribute("desserts",desserts);
+        if (!model.containsAttribute("produitDTO")) {
+            model.addAttribute("produitDTO", new ProduitDTO());
+        }
         return "desserts";
     }
     @GetMapping("/petit-dejeuner")
     public String petitDejeuners(Model model){
         List<Menu>petitDejeuners =menuService.recupereToutMenu();
         model.addAttribute("petitDejeuners",petitDejeuners);
+        if (!model.containsAttribute("menuDto")) {
+            model.addAttribute("menuDto", new MenuDto());
+        }
        return "petit-dejeuners";
     }
     @GetMapping("/moncompte")

@@ -24,7 +24,7 @@ public class Produit {
     @JoinColumn(name="type_id")
     private Type typeProduit;
     @OneToMany(mappedBy = "produit")
-    private List<LigneDeCommande>ligneDeCommandes;
+    private List<LigneDeCommandeProduit>ligneDeCommandes;
     @OneToMany(mappedBy = "produit")
     private List<ProduitTarif>produitTarifs;
     @ManyToMany
