@@ -1,6 +1,7 @@
 package com.diaspotea.diaspoteaserver.services;
 
 import com.diaspotea.diaspoteaserver.models.LigneDeCommande;
+import com.diaspotea.diaspoteaserver.models.LigneDeCommandeProduit;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,23 +18,23 @@ public class LigneDecommandeServiceTest {
     @Test
     @Transactional
     void ajouterLigneDeCommande(){
-        LigneDeCommande ligneDeCommande=new LigneDeCommande();
-        LigneDeCommande ligneDeCommandeAjouter=ligneDecommandeService.AjouterLigneDeCommande(ligneDeCommande);
-        assertThat(ligneDeCommandeAjouter).isEqualTo(ligneDeCommande);
+        LigneDeCommandeProduit ligneDeCommandeProduit =new LigneDeCommandeProduit();
+        LigneDeCommande ligneDeCommandeAjouter=ligneDecommandeService.AjouterLigneDeCommande(ligneDeCommandeProduit);
+        assertThat(ligneDeCommandeAjouter).isEqualTo(ligneDeCommandeProduit);
     }
     @Test
     @Transactional
     void modifierLigneDeCommande(){
-        LigneDeCommande ligneDeCommande=ligneDecommandeService.recupereLigneDeCommande(9);
-        ligneDeCommande.setQuantiter(3);
-        LigneDeCommande ligneDeCommandeModifier=ligneDecommandeService.modifierLigneDeCommande(ligneDeCommande);
-        assertThat(ligneDeCommandeModifier).isEqualTo(ligneDeCommande);
+        LigneDeCommande ligneDeCommandeProduit =ligneDecommandeService.recupereLigneDeCommande(9);
+        ligneDeCommandeProduit.setQuantiter(3);
+        LigneDeCommande ligneDeCommandeModifier=ligneDecommandeService.modifierLigneDeCommande(ligneDeCommandeProduit);
+        assertThat(ligneDeCommandeModifier).isEqualTo(ligneDeCommandeProduit);
     }
     @Test
     @Transactional
     void supprimerLigneDeCommande(){
         ligneDecommandeService.deleteLigneDeCommande(9);
-        LigneDeCommande ligneDeCommande=ligneDecommandeService.recupereLigneDeCommande(9);
-        assertThat(ligneDeCommande).isNull();
+        LigneDeCommande ligneDeCommandeProduit =ligneDecommandeService.recupereLigneDeCommande(9);
+        assertThat(ligneDeCommandeProduit).isNull();
     }
 }

@@ -26,5 +26,5 @@ public class Commande {
     @JoinColumn(name="client_id")
     private Client client;
     @OneToMany(mappedBy = "commande")
-    private List<LigneDeCommande>ligneDeCommandes;
+    private List<LigneDeCommandeProduit>ligneDeCommandes;
 }

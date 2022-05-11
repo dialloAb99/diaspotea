@@ -13,3 +13,27 @@ function ajouterAuPanier(id){
         })
     })
 }
+function diminuerQuantiter(ligneDeCommandeId){
+    fetch('/panier/diminuer/'+ligneDeCommandeId,{
+        method:"PUT",
+        headers:{
+            "content-Type":"application/json"
+        },
+    }).then(()=>window.location.reload())
+}
+function augmenterQuantiter(ligneDeCommandeId){
+    fetch('/panier/augmenter/'+ligneDeCommandeId,{
+        method:"PUT",
+        headers:{
+            "content-Type":"application/json"
+        }
+    }).then(()=>window.location.reload())
+}
+function supprimerLigneDeCommande(ligneDeCommandeId){
+    fetch('/supprimerLigneDeCommande/'+ligneDeCommandeId, {
+        method:"PUT",
+        headers:{
+            "content-Type":"application/json"
+        }
+    }).then(()=>window.location.reload())
+}

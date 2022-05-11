@@ -18,7 +18,7 @@ public class Taille {
     private int id;
     private String name;
     @OneToMany(mappedBy = "taille")
-    private List<LigneDeCommande>ligneDeCommandes;
+    private List<LigneDeCommandeProduit>ligneDeCommandes;
     @OneToMany(mappedBy = "produit")
     private List<ProduitTarif>produits;
 

@@ -2,6 +2,7 @@ package com.diaspotea.diaspoteaserver.services;
 
 import com.diaspotea.diaspoteaserver.models.Client;
 import com.diaspotea.diaspoteaserver.models.LigneDeCommande;
+import com.diaspotea.diaspoteaserver.models.LigneDeCommandeProduit;
 import com.diaspotea.diaspoteaserver.models.Panier;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import javax.transaction.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+
 @SpringBootTest
 
 class PanierServiceTest {
@@ -24,8 +25,8 @@ class PanierServiceTest {
     @Transactional
     void AjouterPanier(){
         Panier panier=new Panier();
-        LigneDeCommande ligneDeCommande =ligneDecommandeService.recupereLigneDeCommande(9);
-        panier.ajouterLigneDeCommande(ligneDeCommande);
+        LigneDeCommande ligneDeCommandeProduit =ligneDecommandeService.recupereLigneDeCommande(9);
+        panier.ajouterLigneDeCommande(ligneDeCommandeProduit);
         Panier panierAjouter=panierService.ajouterPanier(panier);
         assertThat(panierAjouter).isEqualTo(panier);
 
@@ -34,8 +35,8 @@ class PanierServiceTest {
     @Transactional
     void modifierPanier(){
         Panier panier=panierService.recuperePanier(1);
-        LigneDeCommande ligneDeCommande=ligneDecommandeService.recupereLigneDeCommande(9);
-        panier.ajouterLigneDeCommande(ligneDeCommande);
+        LigneDeCommande ligneDeCommandeProduit =ligneDecommandeService.recupereLigneDeCommande(9);
+        panier.ajouterLigneDeCommande(ligneDeCommandeProduit);
         Panier panierModifier=panierService.modifierPanier(panier);
         assertThat(panierModifier).isEqualTo(panier);
     }

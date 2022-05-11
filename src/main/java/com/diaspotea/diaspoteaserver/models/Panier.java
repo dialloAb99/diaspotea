@@ -15,40 +15,75 @@ public class Panier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    public Panier() {
-        ligneDeCommandes=new ArrayList<>();
-        client=new Client();
-    }
-
-    @OneToMany(mappedBy = "panier")
+    @OneToMany(mappedBy = "panier", cascade = CascadeType.ALL)
     private List<LigneDeCommande> ligneDeCommandes;
     @ManyToOne
     private Client client;
+    private boolean etatPanier;
+
+    public Panier() {
+        ligneDeCommandes = new ArrayList<>();
+        client = new Client();
+    }
 
     public void ajouterLigneDeCommande(LigneDeCommande ligneDeCommande) {
         ligneDeCommandes.add(ligneDeCommande);
 
     }
-    private boolean etatPanier;
 
-    public boolean ligneDeCommandeExiste(int produitId, int tailleID) {
-        for (LigneDeCommande ligneDeCommande:ligneDeCommandes) {
-            Produit produit=ligneDeCommande.getProduit();
-            Taille taille=ligneDeCommande.getTaille();
-            if(produit.getId()==produitId && taille.getId()==tailleID){
-                return  true;
+    public boolean ligneDeCommandeProduitExiste(int produitId, int tailleID) {
+        for (LigneDeCommande ligneDeCommande : ligneDeCommandes) {
+            String className = ligneDeCommande.getClass().getSimpleName();
+            if (className.equals("LigneDeCommandeProduit")) {
+                Produit produit = ((LigneDeCommandeProduit) ligneDeCommande).getProduit();
+                Taille taille = ((LigneDeCommandeProduit) ligneDeCommande).getTaille();
+                if (produit.getId() == produitId && taille.getId() == tailleID) {
+                    return true;
+                }
+            }
+
+        }
+        return false;
+    }
+    public boolean ligneDeCommandeMenuExiste(int menuId) {
+        for (LigneDeCommande ligneDeCommande : ligneDeCommandes) {
+            String className = ligneDeCommande.getClass().getSimpleName();
+            if (className.equals("LigneDeCommandeMenu")) {
+                Menu menu = ((LigneDeCommandeMenu) ligneDeCommande).getMenu();
+               return menu.getId() == menuId;
+
             }
         }
-        return  false;
+        return false;
     }
 
-    public LigneDeCommande recupererLigneDeCommande(int produitId, int tailleID){
-        for (LigneDeCommande ligneDeCommande:ligneDeCommandes) {
-            if (ligneDeCommande.getProduit().getId() == produitId && ligneDeCommande.getTaille().getId() == tailleID){
-                return ligneDeCommande;
+    public LigneDeCommandeProduit recupererLigneDeCommandeProduit(int produitId, int tailleID) {
+        for (LigneDeCommande ligneDeCommande : ligneDeCommandes) {
+            String className = ligneDeCommande.getClass().getSimpleName();
+            if (className.equals("LigneDeCommandeProduit")) {
+                if (((LigneDeCommandeProduit) ligneDeCommande).getProduit().getId() == produitId && ((LigneDeCommandeProduit) ligneDeCommande).getTaille().getId() == tailleID) {
+                    return (LigneDeCommandeProduit) ligneDeCommande;
+                }
             }
         }
         return null;
+    }
+
+    public LigneDeCommandeMenu recupererLigneDeCommandeMenu(int menuId) {
+        for (LigneDeCommande ligneDeCommande : ligneDeCommandes) {
+            String className = ligneDeCommande.getClass().getSimpleName();
+            if (className.equals("LigneDeCommandeMenu")) {
+                Menu menu = ((LigneDeCommandeMenu) ligneDeCommande).getMenu();
+                if (menu.getId() == menuId) {
+                    return (LigneDeCommandeMenu) ligneDeCommande;
+                }
+
+            }
+        }
+        return null;
+    }
+
+    public void supprimerLigneDeCommande(LigneDeCommande ligneDeCommande) {
+        ligneDeCommandes.remove(ligneDeCommande);
     }
 }
