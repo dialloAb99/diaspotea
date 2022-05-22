@@ -1,9 +1,7 @@
 package com.diaspotea.diaspoteaserver.controller;
 
 
-import com.diaspotea.diaspoteaserver.dto.MenuDto;
-import com.diaspotea.diaspoteaserver.dto.PanierDto;
-import com.diaspotea.diaspoteaserver.dto.ProduitDTO;
+import com.diaspotea.diaspoteaserver.dto.*;
 import com.diaspotea.diaspoteaserver.models.*;
 import com.diaspotea.diaspoteaserver.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,34 +56,43 @@ public class PanierController {
         }
         Client client = clientService.recupereClient(1);
         boolean panierEstActif = panierService.panierEstActif(client);
-         LigneDeCommandeProduit ligneDeCommande = new LigneDeCommandeProduit();
-        Panier panier=null;
+        LigneDeCommandeProduit ligneDeCommande = new LigneDeCommandeProduit();
+        Produit produit = produitService.recupererProduit(produitDTO.getId());
+        Panier panier = null;
         if (panierEstActif) {
-             panier = panierService.recuperePanierActif(client);
-                Produit produit = produitService.recupererProduit(produitDTO.getId());
-                ProduitTarif produitTarif = produitTarifService.recupereProduitTarif(new ProduitTarifID(produitDTO.getId(), produitDTO.getTailleID()));
-                if (panier.ligneDeCommandeProduitExiste(produitDTO.getId(), produitDTO.getTailleID())) {
-                    ligneDeCommande = panier.recupererLigneDeCommandeProduit(produitDTO.getId(), produitDTO.getTailleID());
-                } else {
-                    ligneDeCommande.setProduit(produit);
-                    ligneDeCommande.setTaille(produitTarif.getTaille());
-                }
-                ligneDeCommande.setPrix(produitTarif.getTarif());
+            panier = panierService.recuperePanierActif(client);
+            if (panier.ligneDeCommandeProduitExiste(produitDTO.getId(), produitDTO.getTailleID())) {
+                ligneDeCommande = panier.recupererLigneDeCommandeProduit(produitDTO.getId(), produitDTO.getTailleID());
+                int nouvellleQuantite = ligneDeCommande.getQuantiter() + produitDTO.getQuantiter();
+                ligneDeCommande.setQuantiter(nouvellleQuantite);
             }
 
+        } else {
+            panier = new Panier();
+            panier.setClient(client);
+            panier.setEtatPanier(true);
+
+        }
+        ligneDeCommande.setProduit(produit);
+        ProduitTarif produitTarif = produitTarifService.recupereProduitTarif(new ProduitTarifID(produitDTO.getId(), produitDTO.getTailleID()));
+        ligneDeCommande.setTaille(produitTarif.getTaille());
+        if(ligneDeCommande.getQuantiter()==0){
             ligneDeCommande.setQuantiter(produitDTO.getQuantiter());
-            ligneDeCommande.setPanier(panier);
-            int nouvellleQuantite = ligneDeCommande.getQuantiter() + produitDTO.getQuantiter();
-            ligneDecommandeService.AjouterLigneDeCommande(ligneDeCommande);
-            panier.ajouterLigneDeCommande(ligneDeCommande);
-            panierService.ajouterPanier(panier);
-            //ajoute ligne de commmande au panier
+        }
+        ligneDeCommande.setPrix(produitTarif.getTarif());
+
+        ligneDeCommande.setPanier(panier);
+        panier.ajouterLigneDeCommande(ligneDeCommande);
+
+        panierService.ajouterPanier(panier);
+        //ajoute ligne de commmande au panier
 
 
         return "redirect:" + url.getPath();
     }
+
     @PostMapping(value = "/panier/ajouter/menu")
-    public String ajouterMenuPanier(@Valid @ModelAttribute  MenuDto menuDto, BindingResult bindingResult,RedirectAttributes attr) {
+    public String ajouterMenuPanier(@Valid @ModelAttribute MenuDto menuDto, BindingResult bindingResult, RedirectAttributes attr) {
         if (bindingResult.hasErrors()) {
             attr.addFlashAttribute("org.springframework.validation.BindingResult.menuDto", bindingResult);
             attr.addFlashAttribute("menuDto", menuDto);
@@ -93,26 +100,30 @@ public class PanierController {
         }
         LigneDeCommandeMenu ligneDeCommande = new LigneDeCommandeMenu();
         Client client = clientService.recupereClient(1);
-        Panier panier=null;
+        Panier panier = null;
         boolean panierEstActif = panierService.panierEstActif(client);
+        Menu menu = menuService.recupereMenu(menuDto.getMenuId());
         if (panierEstActif) {
             panier = panierService.recuperePanierActif(client);
-            menuDto.getMenuId();
             if (panier.ligneDeCommandeMenuExiste(menuDto.getMenuId())) {
                 ligneDeCommande = panier.recupererLigneDeCommandeMenu(menuDto.getMenuId());
             }
-            Menu menu = menuService.recupereMenu(menuDto.getMenuId());
-            ligneDeCommande.setMenu(menu);
-            ligneDeCommande.setPrix(menu.getPrix());
+            int nouvellleQuantite = ligneDeCommande.getQuantiter() + menuDto.getQuantiter();
+            ligneDeCommande.setQuantiter(nouvellleQuantite);
+        }else{
+            panier =new Panier();
+            ligneDeCommande.setQuantiter(menuDto.getQuantiter());
+            panier.setClient(client);
+            panier.setEtatPanier(true);
         }
-        ligneDeCommande.setQuantiter(menuDto.getQuantiter());
+        ligneDeCommande.setMenu(menu);
         ligneDeCommande.setPanier(panier);
-        int nouvellleQuantite = ligneDeCommande.getQuantiter() + menuDto.getQuantiter();
-        ligneDecommandeService.AjouterLigneDeCommande(ligneDeCommande);
+        ligneDeCommande.setPrix(menu.getPrix());
         panier.ajouterLigneDeCommande(ligneDeCommande);
         panierService.ajouterPanier(panier);
         return "redirect:/petit-dejeuner";
     }
+
     @PutMapping(value = "/panier/diminuer/{ligneDeCommandeId}")
     public String diminuerQuantiter(@PathVariable(value = "ligneDeCommandeId") Integer ligneDeCommandeId) {
         LigneDeCommande ligneDeCommande = ligneDecommandeService.recupereLigneDeCommande(ligneDeCommandeId);
@@ -167,4 +178,32 @@ public class PanierController {
     public void suprrimerLigneDeCommandePanier(@PathVariable Integer ligneDeCommandeId) {
         ligneDecommandeService.deleteLigneDeCommande(ligneDeCommandeId);
     }
+
+    @GetMapping("/modifier-adresse-de-livraison/{clientId}")
+    public String recupereAdresseDeLivraison(ModiferFormAdresseLivraisonDto modiferFormAdresseLivraisonDto, Model model) {
+        Client client = clientService.recupereClient(modiferFormAdresseLivraisonDto.getClientId());
+        modiferFormAdresseLivraisonDto.setAdresse(client.getAdresse());
+        modiferFormAdresseLivraisonDto.setCodePostale(client.getCodePostale());
+        modiferFormAdresseLivraisonDto.setVille(client.getVille());
+        modiferFormAdresseLivraisonDto.setEtage(String.valueOf(client.getEtage()));
+        modiferFormAdresseLivraisonDto.setClientId(client.getId());
+        modiferFormAdresseLivraisonDto.setMemeAdresse(false);
+        model.addAttribute("modiferFormAdresseLivraisonDto", modiferFormAdresseLivraisonDto);
+        return "formulaireAdresseLivraison";
+    }
+
+    @PostMapping("/modifier-adresse-de-livraison/{clientId}")
+    public String modifierAdresseLivraison(@Valid @ModelAttribute ModiferFormAdresseLivraisonDto modiferFormAdresseLivraisonDto, BindingResult bindingResult) {
+        Client client = clientService.recupereClient(modiferFormAdresseLivraisonDto.getClientId());
+        if (bindingResult.hasErrors()) {
+            return "formulaireAdresseLivraison";
+        }
+        client.setAdresse(modiferFormAdresseLivraisonDto.getAdresse());
+        client.setCodePostale(modiferFormAdresseLivraisonDto.getCodePostale());
+        client.setVille(modiferFormAdresseLivraisonDto.getVille());
+        client.setEtage(modiferFormAdresseLivraisonDto.getEtage());
+        clientService.modifierClient(client);
+        return "redirect:/monpanier/" + client.getUtilisateur().getId();
+    }
+
 }

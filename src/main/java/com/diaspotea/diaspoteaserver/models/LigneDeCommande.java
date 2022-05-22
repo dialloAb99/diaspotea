@@ -1,5 +1,7 @@
 package com.diaspotea.diaspoteaserver.models;
 
+import com.diaspotea.diaspoteaserver.models.Commande;
+import com.diaspotea.diaspoteaserver.models.Panier;
 import lombok.Getter;
 import lombok.Setter;
 

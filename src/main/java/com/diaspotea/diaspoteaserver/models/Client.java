@@ -28,7 +28,7 @@ public class Client {
     private String adresse;
     private String codePostale;
     private String ville;
-    private int etage;
+    private String etage;
     @OneToMany(mappedBy = "client")
     private List<Commande>commandes;
     @OneToOne

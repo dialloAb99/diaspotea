@@ -25,7 +25,6 @@ public class CommandeServiceTest {
     @Transactional
     void modifierCommande(){
         Commande commande=commandeService.recupereCommande(4);
-        commande.setAdresseLivraison("143 rue du tonton pat le prof 94300 bonneuil");
         Commande commandeModifier=commandeService.modifierCommande(commande);
         assertThat(commandeModifier).isEqualTo(commande);
     }

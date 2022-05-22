@@ -1,0 +1,167 @@
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+
+    <div th:replace="fragments/header :: header-css"/>
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+    <script defer th:src="@{/resources/js/checkout.js}"></script>
+</head>
+<body class="bg-light">
+<div th:replace="fragments/header :: menu(activeTab='home')"/>
+<div class="container">
+    <main>
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+            <h2>Checkout form</h2>
+
+            <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+        </div>
+
+        <div class="row g-5"  th:object="${paiementDto}">
+
+            <div class="col-md-5 col-lg-4 order-md-last">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-primary">Your cart</span>
+                    <span  th:text="*{ligneDeCommandes.size()}" class="badge bg-primary rounded-pill">3</span>
+                </h4>
+                <ul class="list-group mb-3" >
+                    <li class="list-group-item d-flex justify-content-between lh-sm" th:each="ligneDeCommande : *{ligneDeCommandes}">
+                        <div th:if="${ligneDeCommande == 'com.diaspotea.diaspoteaserver.models.LigneDeCommandeProduit' }" >
+                            <h6 th:text="${ligneDeCommande.produit.nom}" class="my-0">nom du Produit</h6>
+                            <p th:text="'taille:'+${ligneDeCommande.taille.name}">Size: 26cl</p>
+                        </div >
+                        <div th:if="${ligneDeCommande == 'com.diaspotea.diaspoteaserver.models.LigneDeCommandeMenu' }" >
+                            <h6 th:text="${ligneDeCommande.menu.nom}" class="my-0">nom du Produit</h6>
+                        </div>
+                        <small class="text-muted">description</small>
+                        <span class="text-muted" th:text="${ligneDeCommande.prix}+'€'">€12</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Total (USD)</span>
+                        <strong th:text="*{calculePrixTotal(ligneDeCommandes)}" >€20</strong>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-md-7 col-lg-8">
+                <h4 class="mb-3">Billing address</h4>
+                <form action="/paiement" method="post"  th:object="${paiementDto}" class ="needs-validation" novalidate>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <label for="address" class="form-label">Address</label>
+                            <input name="adresse" th:field="*{adresse}" type="text" class="form-control" id="address" placeholder="1234 Main St" required th:classappend="${#fields.hasErrors('adresse') ? 'is-invalid':''}">
+                            <p class="invalid-feedback" th:if="${#fields.hasErrors('adresse')}" th:errors="*{adresse}"></p>
+                        </div>
+
+                        <div class="col-12">
+                            <input type="text" class="form-control" id="etage" name="etage" placeholder="veuillez indiquer l'étage"   th:classappend="${#fields.hasErrors('etage') ? 'is-invalid':''}" th:field="*{etage}" >
+                            <p  class="invalid-feedback" th:if="${#fields.hasErrors('etage')}" th:errors="*{etage}"></p>
+                        </div>
+
+                        <div class="col-md-5">
+                            <label for="ville" class="form-label">Ville</label>
+                            <select name="ville" th:field="*{ville}" class="form-select" id="ville" required th:classappend="${#fields.hasErrors('ville') ? 'is-invalid':''}">
+                                <option value="">Selectionner une ville</option>
+                                <option th:value="*{ville}" th:text="*{ville}">United States</option>
+                            </select>
+                            <p  class="invalid-feedback" th:if="${#fields.hasErrors('ville')}" th:errors="*{ville}"></p>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="code-postale" class="form-label">Code postale</label>
+                            <input type="text" th:field="*{codePostale}" th:classappend="${#fields.hasErrors('codePostale') ? 'is-invalid':''}" class="form-control" id="code-postale" placeholder="" required>
+                            <p class="invalid-feedback" th:if="${#fields.hasErrors('codePostale')}" th:errors="*{codePostale}"></p>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="meme-adresse" th:field="*{memeAdresse}">
+                        <label class="form-check-label" for="meme-adresse">Shipping address is the same as my billing address</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="save-info">
+                        <label class="form-check-label" for="save-info">Save this information for next time</label>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <h4 class="mb-3">Payment</h4>
+
+                    <div class="my-3">
+                        <div class="form-check">
+                            <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
+                            <label class="form-check-label" for="credit">Credit card</label>
+                        </div>
+                        <div class="form-check">
+                            <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
+                            <label class="form-check-label" for="debit">Debit card</label>
+                        </div>
+                        <div class="form-check">
+                            <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
+                            <label class="form-check-label" for="paypal">PayPal</label>
+                        </div>
+                    </div>
+                    <input type="hidden" name="panierId" th:field="*{panierId}">
+                    <input type="hidden" name="clientId" th:field="*{clientId}">
+                    <input type='hidden' th:value='${paiementDto.calculePrixTotal(paiementDto.ligneDeCommandes)}' name='prixTotal' />
+                    <script
+                            src='https://checkout.stripe.com/checkout.js'
+                            class='stripe-button'
+                            th:attr='data-key=${stripePublicKey},
+                         data-amount=${paiementDto.calculePrixTotal(paiementDto.ligneDeCommandes)*100},
+                           data-currency=${currency}'
+                            data-name='Baeldung'
+                            data-description='Spring course checkout'
+                            data-image='http://www.baeldung.com/wp-content/themes/baeldung/favicon/android-chrome-192x192.png'
+                            data-locale='auto'
+                            data-zip-code='false'>
+                    </script>
+
+                    <hr class="my-4">
+
+<!--                    <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>-->
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2017–2021 Company Name</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy</a></li>
+            <li class="list-inline-item"><a href="#">Terms</a></li>
+            <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+    </footer>
+</div>
+
+
+<script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script src="form-validation.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: header-css"/>
+    <meta charset="UTF-8">
+    <title>Modifier adresse livraison</title>
+</head>
+<body>
+<div th:replace="fragments/header :: menu(activeTab='home')"/>
+
+<form th:action="'/modifier-adresse-de-livraison/'+${modiferFormAdresseLivraisonDto.clientId}" th:object="${modiferFormAdresseLivraisonDto}" method="post" class ="needs-validation" novalidate>
+    <div class="row g-3">
+        <div class="col-12">
+            <label for="address" class="form-label">Address</label>
+            <input name="adresse" th:field="*{adresse}" type="text" class="form-control" id="address" placeholder="1234 Main St" required th:classappend="${#fields.hasErrors('adresse') ? 'is-invalid':''}">
+            <p class="invalid-feedback" th:if="${#fields.hasErrors('adresse')}" th:errors="*{adresse}"></p>
+        </div>
+
+        <div class="col-12">
+        <input type="text" class="form-control" id="etage" name="etage" placeholder="veuillez indiquer l'étage"   th:classappend="${#fields.hasErrors('etage') ? 'is-invalid':''}" th:field="*{etage}" >
+        <p  class="invalid-feedback" th:if="${#fields.hasErrors('etage')}" th:errors="*{etage}"></p>
+        </div>
+
+        <div class="col-md-5">
+            <label for="ville" class="form-label">Ville</label>
+            <select name="ville" th:field="*{ville}" class="form-select" id="ville" required th:classappend="${#fields.hasErrors('ville') ? 'is-invalid':''}">
+                <option value="">Selectionner une ville</option>
+                <option th:value="*{ville}" th:text="*{ville}">United States</option>
+            </select>
+            <p  class="invalid-feedback" th:if="${#fields.hasErrors('ville')}" th:errors="*{ville}"></p>
+        </div>
+        <div class="col-md-3">
+            <label for="code-postale" class="form-label">Code postale</label>
+            <input type="text" th:field="*{codePostale}" th:classappend="${#fields.hasErrors('codePostale') ? 'is-invalid':''}" class="form-control" id="code-postale" placeholder="" required>
+            <p class="invalid-feedback" th:if="${#fields.hasErrors('codePostale')}" th:errors="*{codePostale}"></p>
+        </div>
+    </div>
+
+    <hr class="my-4">
+
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="meme-adresse" th:field="*{memeAdresse}">
+        <label class="form-check-label" for="meme-adresse">Shipping address is the same as my billing address</label>
+    </div>
+
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="save-info">
+        <label class="form-check-label" for="save-info">Save this information for next time</label>
+    </div>
+
+    <button class="w-100 btn btn-primary btn-lg" type="submit">Modifier addresse livraison </button>
+</form>
+
+</body>
+</html>

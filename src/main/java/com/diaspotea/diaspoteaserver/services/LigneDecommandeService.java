@@ -1,7 +1,6 @@
 package com.diaspotea.diaspoteaserver.services;
 
 import com.diaspotea.diaspoteaserver.models.LigneDeCommande;
-import com.diaspotea.diaspoteaserver.models.LigneDeCommandeProduit;
 import com.diaspotea.diaspoteaserver.repository.LigneDeCommandeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

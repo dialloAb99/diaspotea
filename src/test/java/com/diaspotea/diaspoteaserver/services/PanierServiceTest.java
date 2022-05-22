@@ -2,7 +2,6 @@ package com.diaspotea.diaspoteaserver.services;
 
 import com.diaspotea.diaspoteaserver.models.Client;
 import com.diaspotea.diaspoteaserver.models.LigneDeCommande;
-import com.diaspotea.diaspoteaserver.models.LigneDeCommandeProduit;
 import com.diaspotea.diaspoteaserver.models.Panier;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

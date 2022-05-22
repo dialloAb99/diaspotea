@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:th='http://www.thymeleaf.org'>
+    <head>
+        <title>Result</title>
+    </head>
+    <body>
+        <h3 th:if='${error}' th:text='${error}' style='color: red;'></h3>
+        <div th:unless='${error}'>
+            <h3 style='color: green;'>Success!</h3>
+            <div>dateCommande: <span th:text='${dateCommande}' /></div>
+            <div>dateLivraison: <span th:text='${dateLivraison}' /></div>
+            <div>montant: <span th:text='${montant}' /></div>
+        </div>
+        <a href='/payer'>Checkout again</a>
+    </body>
+</html>
