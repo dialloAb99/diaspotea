@@ -29,7 +29,7 @@ INSERT INTO utilisateur (id, mode_passe, prenom, role, user_name, livreur_id) VA
 INSERT INTO utilisateur (id, mode_passe, prenom, role, user_name, livreur_id) VALUES  (3, '345', 'tonton', 'livreur', 'capuccino', null);
 INSERT INTO livreur (id, adresse, code_postale, nom, num_tel, prenom, ville, utilisateur_id) VALUES (2, '3 rue george', '94450', 'capuccino', '651123456', 'tonton', 'sucy', 3);
 INSERT INTO client (id, adresse, code_postale, etage, mail, nom, numero_tel, prenom, ville, utilisateur_id) VALUES (1, '2 rue des tilleuls', '94470', 6, 'dias94@gmail.com', 'messi', '0145991457', 'lionel', 'creteil', 2);
--- INSERT INTO panier (id,client_id,etat_Panier) VALUES (1,1,true);
+INSERT INTO panier (id,client_id,etat_Panier) VALUES (1,1,true);
 UPDATE  utilisateur SET livreur_id=2 where id=3;
 
 INSERT INTO commande (id, date_commande, adresse, code_postale,ville,etage,date_livraison, client_id, livreur_id) VALUES (4, '2022-02-14 15:16:22.000000','141 rue des tilleuls','94470','boissy','','2022-02-14 15:30:11.000000', 1,2);

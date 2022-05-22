@@ -123,7 +123,6 @@ public class PanierController {
         panierService.ajouterPanier(panier);
         return "redirect:/petit-dejeuner";
     }
-
     @PutMapping(value = "/panier/diminuer/{ligneDeCommandeId}")
     public String diminuerQuantiter(@PathVariable(value = "ligneDeCommandeId") Integer ligneDeCommandeId) {
         LigneDeCommande ligneDeCommande = ligneDecommandeService.recupereLigneDeCommande(ligneDeCommandeId);
