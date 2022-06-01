@@ -12,9 +12,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.servlet.support.RequestContextUtils;
+import org.springframework.web.servlet.view.RedirectView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Map;
 
 @Controller
 
@@ -53,7 +58,7 @@ public class PaiementController {
 
 
     @PostMapping("/paiement")
-    public String paiement(PaiementDto paiementDto, ChargeRequest chargeRequest, Model model) {
+    public RedirectView paiement(PaiementDto paiementDto, ChargeRequest chargeRequest, RedirectAttributes attr) {
         chargeRequest.setDescription("Example charge");
         chargeRequest.setCurrency(ChargeRequest.Currency.EUR);
         chargeRequest.setAmount((int) (paiementDto.getPrixTotal() * 100));
@@ -88,10 +93,22 @@ public class PaiementController {
         commandeService.ajouterCommande(commande);
         panier.setEtatPanier(false);
         panierService.modifierPanier(panier);
-        model.addAttribute("dateCommande",commande.getDateCommande());
-        model.addAttribute("dateLivraison",commande.getDateLivraison());
-        model.addAttribute("montant",paiementDto.getPrixTotal()+" "+ChargeRequest.Currency.EUR.toString());
-        return "result";
+        attr.addFlashAttribute("dateCommande",commande.getDateCommande());
+        attr.addFlashAttribute("dateLivraison",commande.getDateLivraison());
+        attr.addFlashAttribute("montant",paiementDto.getPrixTotal()+" "+ChargeRequest.Currency.EUR.toString());
+        return new RedirectView("/result", true);
+    }
+    @GetMapping("/result")
+    public  String result(HttpServletRequest request){
+        Map<String, ?> inputFlashMap = RequestContextUtils.getInputFlashMap(request);
+        if (inputFlashMap != null) {
+            String dateCommande = ((LocalDateTime) inputFlashMap.get("dateCommande")).toString();
+            LocalDateTime  dateLivraison=(LocalDateTime) inputFlashMap.get("dateLivraison");
+            String montant= (String) inputFlashMap.get("montant");
+            return "result";
+        } else {
+            return "redirect:/";
+        }
     }
 
 }

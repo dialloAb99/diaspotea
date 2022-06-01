@@ -31,6 +31,9 @@ public class ProduitService {
     public void deleteProduit(int id) {
         produitRepository.deleteById(id);
     }
+    public void deleteProduit(Produit produit) {
+        produitRepository.delete(produit);
+    }
 
     public void deleteProduitTarif(int i, int i1) {
     }

@@ -1,6 +1,8 @@
 package com.diaspotea.diaspoteaserver.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -12,6 +14,8 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class PhotoArticle {
     @Id
     @GeneratedValue(strategy=IDENTITY)

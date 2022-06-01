@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: header-css"/>
+    <meta charset="UTF-8">
+    <title>Liste des produits</title>
+    <link rel="stylesheet" th:href="@{/resources/css/style.css}">
+    <script defer   th:src="@{/resources/js/admin.js}"></script>
+</head>
+<body>
+<div th:replace="fragments/header :: menu(activeTab='home')"/>
+
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-4">
+                <h2 class="heading-section">Table #06</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="h5 mb-4 text-center">Table Accordion</h3>
+                <div class="table-wrap">
+                    <p th:text="${status}" class="h1"></p>
+                    <table class="table">
+                        <thead class="thead-primary">
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Modify</th>
+                            <th>&nbsp;</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="alert" role="alert" th:each="produit:${produits}">
+                            <td>
+                                <label class="checkbox-wrap checkbox-primary">
+                                    <input type="checkbox">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </td>
+                            <td>
+                                <div th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.ProduitDto' }">
+                                    <img class="img" th:each="photoArticle,iter: ${produit.photoArticles}" th:if="${iter.index} == 0" th:src="${photoArticle.url}"/>
+                                </div>
+
+                            </td>
+                            <td>
+                                <div class="email">
+                                    <span th:text="${produit.nom}">nom du produit </span>
+                                    <span th:text="${produit.description}">description du produit</span>
+                                    <span th:text="${produit.produitTarifDto.taille.name}" th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.ProduitDto' }">taille du produit</span>
+                                </div>
+                            </td>
+                            <td  th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.MenuDto' }" th:text="${produit.prix}">prix €</td>
+                            <td  th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.ProduitDto' }" th:text="${produit.produitTarifDto.prix}">prix €</td>
+                            <td th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.ProduitDto' }">
+                                <a th:href="'/admin/modifierProduit/'+${produit.id}+'/'+${produit.produitTarifDto.taille.id}">modifier</a>
+
+                            </td>
+                            <td th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.MenuDto' }">
+                                <a th:href="'/admin/modifierMenu/'+${produit.id}">modifier</a>
+                            </td>
+                            <td>
+                                <form action="#" th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.ProduitDto' }" th:action="@{/admin/produit/{id}/{tailleId}(id=${produit.id},tailleId=${produit.produitTarifDto.taille.id})}" th:method="delete" >
+
+                                    <button  type="submit"  class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true"><i class="fa fa-close  fa-2xl"></i></span>
+                                    </button>
+                                </form>
+                                <form action="#" th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.MenuDto' }" th:action="@{/admin/menu/{id}(id=${produit.id})}" th:method="delete" >
+
+                                    <button  type="submit"  class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true"><i class="fa fa-close  fa-2xl"></i></span>
+                                    </button>
+                                </form>
+
+
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

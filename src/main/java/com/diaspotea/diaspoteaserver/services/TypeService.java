@@ -1,9 +1,12 @@
 package com.diaspotea.diaspoteaserver.services;
 
+import com.diaspotea.diaspoteaserver.dto.TypeProduitDto;
 import com.diaspotea.diaspoteaserver.models.Type;
 import com.diaspotea.diaspoteaserver.repository.TypeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 
@@ -28,5 +31,9 @@ public class TypeService {
 
     public void deleteType(int id) {
         typeRepository.deleteById(id);
+    }
+
+    public List<TypeProduitDto> getAll() {
+        return  typeRepository.findAllTypeProduitDto();
     }
 }

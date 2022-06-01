@@ -1,11 +1,10 @@
 package com.diaspotea.diaspoteaserver.models;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -15,7 +14,12 @@ import java.util.Objects;
 public class ProduitTarif {
     @EmbeddedId
     private  ProduitTarifID  produitTarifID;
-    private Float tarif;
+    private Float prix;
+    @ManyToMany
+    @JoinTable(name="produit_menu",
+            joinColumns={@JoinColumn(name="produit_id"),@JoinColumn(name = "taille_id")},
+            inverseJoinColumns={@JoinColumn(name="menu_id")})
+    private List<Menu> menus;
     @ManyToOne
     @MapsId("produitID")
     private Produit produit;
@@ -25,14 +29,14 @@ public class ProduitTarif {
 
     public ProduitTarif() {
         produitTarifID=new ProduitTarifID();
-        tarif=0f;
+        prix =0f;
         produit=new Produit();
         taille=new Taille();
     }
 
-    public ProduitTarif(ProduitTarifID produitTarifID, Float tarif, Produit produit, Taille taille) {
+    public ProduitTarif(ProduitTarifID produitTarifID, Float prix, Produit produit, Taille taille) {
         this.produitTarifID = produitTarifID;
-        this.tarif = tarif;
+        this.prix = prix;
         this.produit = produit;
         this.taille = taille;
     }
@@ -48,11 +52,15 @@ public class ProduitTarif {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ProduitTarif that = (ProduitTarif) o;
-        return produitTarifID.equals(that.produitTarifID) && Objects.equals(tarif, that.tarif) && produit.equals(that.produit) && taille.equals(that.taille);
+        return produitTarifID.equals(that.produitTarifID) && Objects.equals(prix, that.prix) && produit.equals(that.produit) && taille.equals(that.taille);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(produitTarifID, tarif, produit, taille);
+        return Objects.hash(produitTarifID, prix, produit, taille);
+    }
+
+    public void removeMenu(Menu menu) {
+        menus.remove(menu);
     }
 }

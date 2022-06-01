@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: header-css"/>
+    <meta charset="UTF-8">
+    <title>Modifier les produit</title>
+</head>
+<body>
+<div th:replace="fragments/header :: menu(activeTab='home')"/>
+<form th:action="${ produit.class.name == 'com.diaspotea.diaspoteaserver.dto.ProduitDto' ? '/admin/modifierProduit/'+produit.id+'/'+produit.tailleId : '/admin/modifierMenu/'+ produit.id }" th:method="put" th:object="${produit}">
+    <input name="nom" th:field="*{nom}">
+    <input name="description" th:field="*{description}" placeholder="description produit">
+    <input name="id" th:field="*{id}" hidden>
+    <input name="tarif" th:field="*{prix}">
+    <input name="tailleId" th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.ProduitDto'}" th:field="*{tailleId}"  hidden>
+        <input type="submit"  value="modifier produit">
+    <table class="table">
+        <thead class="thead-primary">
+        <tr>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+            <th>Product</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="alert" role="alert" th:each="produit:*{produits}">
+            <td>
+                <label class="checkbox-wrap checkbox-primary">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </td>
+            <td>
+                <div class="email">
+                    <span th:text="${produit.nom}">nom du produit </span> -
+                    <span th:text="${produit.taille.name}">taille du produit</span>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+
+</body>
+</html>

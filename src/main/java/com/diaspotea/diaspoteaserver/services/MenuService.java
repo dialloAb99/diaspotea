@@ -22,7 +22,7 @@ public class MenuService {
         return menuRepository.findById(id).orElse(null);
     }
 
-    public Menu modifierModifier(Menu menu) {
+    public Menu modifierMenu(Menu menu) {
         return menuRepository.save(menu);
     }
 
@@ -32,5 +32,9 @@ public class MenuService {
 
     public List<Menu> recupereToutMenu() {
         return  menuRepository.findAll();
+    }
+
+    public void deleteMenu(Menu menu) {
+        menuRepository.delete(menu);
     }
 }

@@ -12,7 +12,7 @@
 <ul>
     <li  th:each="petitDejeuner :${petitDejeuners}">
         <p th:text="${petitDejeuner.nom}"></p>
-        <form th:action="@{/panier/ajouter/menu}" method="post" th:object="${menuDto}">
+        <form th:action="@{/panier/ajouter/menu}" method="post" th:object="${menuPanierDto}">
             <p th:if="${#fields.hasErrors('menuId')}" th:errors="*{menuId}"></p>
             <input type="text" name="menuId"  th:value="${petitDejeuner.id}" hidden=""></input>
             <p th:if="${#fields.hasErrors('menuId')}" th:errors="*{menuId}"></p>

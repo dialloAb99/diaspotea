@@ -19,7 +19,20 @@ public class Menu {
     private String description;
     private  float prix;
     @ManyToMany(mappedBy = "menus")
-    private List<Produit> produits;
+    private List<ProduitTarif> produits;
     @OneToMany(mappedBy = "menu")
     private List<LigneDeCommandeMenu> ligneDeCommandeMenus;
+    @PreRemove
+    private  void  beforeRemove(){
+        removeLigneDeCommande();
+        removeProduits();
+    }
+    private   void removeLigneDeCommande(){
+        this.ligneDeCommandeMenus.forEach(ligneDeCommandeMenu -> ligneDeCommandeMenu.setMenu(null));
+        this.ligneDeCommandeMenus.clear();
+    }
+    private   void removeProduits() {
+        this.produits.forEach(produit -> produit.removeMenu(this));
+        this.produits.clear();
+    }
 }

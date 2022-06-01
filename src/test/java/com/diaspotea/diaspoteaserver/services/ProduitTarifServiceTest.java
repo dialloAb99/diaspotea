@@ -38,7 +38,7 @@ public class ProduitTarifServiceTest {
     void modifierProduitTarif(){
         ProduitTarifID produitTarifId= new ProduitTarifID(1, 10);
         ProduitTarif produitTarif=produitTarifService.recupereProduitTarif(produitTarifId);
-        produitTarif.setTarif(3.5f);
+        produitTarif.setPrix(3.5f);
         ProduitTarif produitTarifModifier=produitTarifService.modifierProduitTarif(produitTarif);
         assertThat(produitTarifModifier).isEqualTo(produitTarif);
     }

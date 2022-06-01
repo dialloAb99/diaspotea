@@ -42,7 +42,7 @@ public class PanierController {
 
 
     @PostMapping(value = "/panier/ajouter/produit")
-    public String panierAjouter(@Valid @ModelAttribute ProduitDTO produitDTO, HttpServletRequest request, BindingResult bindingResult, RedirectAttributes attr) {
+    public String panierAjouter(@Valid @ModelAttribute ProduitPanierDTO produitPanierDTO, HttpServletRequest request, BindingResult bindingResult, RedirectAttributes attr) {
         URL url = null;
         try {
             url = new URL(request.getHeader("referer"));
@@ -51,19 +51,19 @@ public class PanierController {
         }
         if (bindingResult.hasErrors()) {
             attr.addFlashAttribute("org.springframework.validation.BindingResult.produitDTO", bindingResult);
-            attr.addFlashAttribute("produitDTO", produitDTO);
+            attr.addFlashAttribute("produitPanierDTO", produitPanierDTO);
             return "redirect:/boisson";
         }
         Client client = clientService.recupereClient(1);
         boolean panierEstActif = panierService.panierEstActif(client);
         LigneDeCommandeProduit ligneDeCommande = new LigneDeCommandeProduit();
-        Produit produit = produitService.recupererProduit(produitDTO.getId());
+        Produit produit = produitService.recupererProduit(produitPanierDTO.getId());
         Panier panier = null;
         if (panierEstActif) {
             panier = panierService.recuperePanierActif(client);
-            if (panier.ligneDeCommandeProduitExiste(produitDTO.getId(), produitDTO.getTailleID())) {
-                ligneDeCommande = panier.recupererLigneDeCommandeProduit(produitDTO.getId(), produitDTO.getTailleID());
-                int nouvellleQuantite = ligneDeCommande.getQuantiter() + produitDTO.getQuantiter();
+            if (panier.ligneDeCommandeProduitExiste(produitPanierDTO.getId(), produitPanierDTO.getTailleID())) {
+                ligneDeCommande = panier.recupererLigneDeCommandeProduit(produitPanierDTO.getId(), produitPanierDTO.getTailleID());
+                int nouvellleQuantite = ligneDeCommande.getQuantiter() + produitPanierDTO.getQuantiter();
                 ligneDeCommande.setQuantiter(nouvellleQuantite);
             }
 
@@ -74,12 +74,12 @@ public class PanierController {
 
         }
         ligneDeCommande.setProduit(produit);
-        ProduitTarif produitTarif = produitTarifService.recupereProduitTarif(new ProduitTarifID(produitDTO.getId(), produitDTO.getTailleID()));
+        ProduitTarif produitTarif = produitTarifService.recupereProduitTarif(new ProduitTarifID(produitPanierDTO.getId(), produitPanierDTO.getTailleID()));
         ligneDeCommande.setTaille(produitTarif.getTaille());
         if(ligneDeCommande.getQuantiter()==0){
-            ligneDeCommande.setQuantiter(produitDTO.getQuantiter());
+            ligneDeCommande.setQuantiter(produitPanierDTO.getQuantiter());
         }
-        ligneDeCommande.setPrix(produitTarif.getTarif());
+        ligneDeCommande.setPrix(produitTarif.getPrix());
 
         ligneDeCommande.setPanier(panier);
         panier.ajouterLigneDeCommande(ligneDeCommande);
@@ -92,27 +92,27 @@ public class PanierController {
     }
 
     @PostMapping(value = "/panier/ajouter/menu")
-    public String ajouterMenuPanier(@Valid @ModelAttribute MenuDto menuDto, BindingResult bindingResult, RedirectAttributes attr) {
+    public String ajouterMenuPanier(@Valid @ModelAttribute MenuPanierDto menuPanierDto, BindingResult bindingResult, RedirectAttributes attr) {
         if (bindingResult.hasErrors()) {
             attr.addFlashAttribute("org.springframework.validation.BindingResult.menuDto", bindingResult);
-            attr.addFlashAttribute("menuDto", menuDto);
+            attr.addFlashAttribute("menuPanierDto", menuPanierDto);
             return "redirect:/petit-dejeuner";
         }
         LigneDeCommandeMenu ligneDeCommande = new LigneDeCommandeMenu();
         Client client = clientService.recupereClient(1);
         Panier panier = null;
         boolean panierEstActif = panierService.panierEstActif(client);
-        Menu menu = menuService.recupereMenu(menuDto.getMenuId());
+        Menu menu = menuService.recupereMenu(menuPanierDto.getMenuId());
         if (panierEstActif) {
             panier = panierService.recuperePanierActif(client);
-            if (panier.ligneDeCommandeMenuExiste(menuDto.getMenuId())) {
-                ligneDeCommande = panier.recupererLigneDeCommandeMenu(menuDto.getMenuId());
+            if (panier.ligneDeCommandeMenuExiste(menuPanierDto.getMenuId())) {
+                ligneDeCommande = panier.recupererLigneDeCommandeMenu(menuPanierDto.getMenuId());
             }
-            int nouvellleQuantite = ligneDeCommande.getQuantiter() + menuDto.getQuantiter();
+            int nouvellleQuantite = ligneDeCommande.getQuantiter() + menuPanierDto.getQuantiter();
             ligneDeCommande.setQuantiter(nouvellleQuantite);
         }else{
             panier =new Panier();
-            ligneDeCommande.setQuantiter(menuDto.getQuantiter());
+            ligneDeCommande.setQuantiter(menuPanierDto.getQuantiter());
             panier.setClient(client);
             panier.setEtatPanier(true);
         }
@@ -140,8 +140,8 @@ public class PanierController {
     }
 
     @PutMapping("/panier/modify")
-    public String modifierPanier(@RequestBody ProduitDTO produitDTO) {
-        Panier panier = panierService.recuperePanier(produitDTO.getPanierId());
+    public String modifierPanier(@RequestBody ProduitPanierDTO produitPanierDTO) {
+        Panier panier = panierService.recuperePanier(produitPanierDTO.getPanierId());
         panierService.ajouterPanier(panier);
         //recuperer le panier
         //recuperer la ligne de commande

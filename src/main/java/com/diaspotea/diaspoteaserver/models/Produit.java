@@ -18,20 +18,16 @@ public class Produit {
     private int id;
     private String nom;
     private String description;
-    @OneToMany(mappedBy = "produit")
+    @OneToMany(mappedBy = "produit",cascade = CascadeType.ALL)
     private List<PhotoArticle>photoArticles;
     @ManyToOne
     @JoinColumn(name="type_id")
     private Type typeProduit;
     @OneToMany(mappedBy = "produit")
     private List<LigneDeCommandeProduit>ligneDeCommandes;
-    @OneToMany(mappedBy = "produit")
+    @OneToMany(mappedBy = "produit",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<ProduitTarif>produitTarifs;
-    @ManyToMany
-    @JoinTable(name="produit_menu",
-            joinColumns={@JoinColumn(name="produit_id")},
-            inverseJoinColumns={@JoinColumn(name="menu_id")})
-    private List<Menu>menus;
+
     @ManyToMany
     @JoinTable(name="produit_categorie",
             joinColumns={@JoinColumn(name="produit_id")},
@@ -41,4 +37,11 @@ public class Produit {
     public void addCategorie(Categorie categorie) {
         categories.add(categorie);
     }
+
+
+
+    public void removeProduitTarif(int produitId, int tailleId) {
+        produitTarifs.removeIf(produitTarif -> produitTarif.getProduit().getId() == produitId && produitTarif.getTaille().getId() == tailleId);
+    }
+
 }

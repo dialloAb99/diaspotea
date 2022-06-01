@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: header-css"/>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+</head>
+<body>
+<div th:replace="fragments/header :: menu(activeTab='home')"/>
+<h1>page d'acceuil</h1>
+<a href="/admin/produits">Liste des produits</a>
+<a href="/admin/produit-ajouter">ajouter un produit</a>
+
+</body>
+</html>

@@ -12,7 +12,7 @@
     <li th:each="boisson :${boissons}">
 <!--        afficher le nom d'une boisson-->
         <p th:text="${boisson.nom}"></p>
-        <form th:action="@{/panier/ajouter/produit}" method="post" th:object="${produitDTO}">
+        <form th:action="@{/panier/ajouter/produit}" method="post" th:object="${produitPanierDTO}">
             <input  type="text" name="id"   th:value="${boisson.id}" hidden>
             <p th:if="${#fields.hasErrors('tailleID')}" th:errors="*{tailleID}"></p>
             <select name="tailleID" id="produit-taille">

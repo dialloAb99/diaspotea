@@ -26,7 +26,7 @@ public class MenuServiceTest {
     void modifierMenu(){
         Menu menu=menuService.recupereMenu(1);
         menu.setNom("box midi");
-        Menu menuModifier=menuService.modifierModifier(menu);
+        Menu menuModifier=menuService.modifierMenu(menu);
         assertThat(menuModifier).isEqualTo(menu);
     }
     @Test

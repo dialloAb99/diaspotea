@@ -1,5 +1,6 @@
 package com.diaspotea.diaspoteaserver.dto;
 
+import com.diaspotea.diaspoteaserver.models.Taille;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -8,4 +9,6 @@ import java.io.Serializable;
 public class TailleDto implements Serializable {
     private final int id;
     private final String name;
+
+
 }

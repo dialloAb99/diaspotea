@@ -22,4 +22,6 @@ public class LigneDeCommandeProduit extends LigneDeCommande {
     private Taille taille;
 
 
+
+
 }

@@ -6,8 +6,8 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-public class ProduitTarifDto implements Serializable {
+public class NomProduitDto implements Serializable {
     private final ProduitTarifID produitTarifID;
-    private final Float prix;
-    private final TailleDto taille;
+    private final String nom;
+    private  final TailleDto taille;
 }

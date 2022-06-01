@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
-public class ProduitDTO {
+public class ProduitPanierDTO {
     @NotNull
     private  Integer id;
     @NotNull(message = "Veuillez choisir une taille")
