@@ -1,10 +1,12 @@
 package com.diaspotea.diaspoteaserver.models;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static javax.persistence.GenerationType.IDENTITY;
@@ -12,6 +14,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Entity
 @Setter
 @Getter
+
 public class Produit {
     @Id
     @GeneratedValue(strategy=IDENTITY)
@@ -27,6 +30,15 @@ public class Produit {
     private List<LigneDeCommandeProduit>ligneDeCommandes;
     @OneToMany(mappedBy = "produit",cascade = CascadeType.ALL,orphanRemoval = true)
     private List<ProduitTarif>produitTarifs;
+
+    public Produit() {
+        produitTarifs=new ArrayList<>();
+        ligneDeCommandes=new ArrayList<>();
+        categories=new ArrayList<>();
+        photoArticles=new ArrayList<>();
+
+
+    }
 
     @ManyToMany
     @JoinTable(name="produit_categorie",
@@ -44,4 +56,7 @@ public class Produit {
         produitTarifs.removeIf(produitTarif -> produitTarif.getProduit().getId() == produitId && produitTarif.getTaille().getId() == tailleId);
     }
 
+    public void ajouterProduitTarif(ProduitTarif produitTarif) {
+        produitTarifs.add(produitTarif);
+    }
 }

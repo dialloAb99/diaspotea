@@ -42,12 +42,12 @@ INSERT  INTO produit_categorie(produit_id, categorie_id) VALUES  (4,2);
 INSERT  INTO produit_categorie(produit_id, categorie_id) VALUES  (5,2);
     INSERT INTO produit_menu (produit_id,taille_id, menu_id) VALUES(1,1,2);
 
-INSERT INTO utilisateur (id, mode_passe, prenom, role, user_name, livreur_id) VALUES (1, '123', 'abdou', 'admin', 'diallo', NULL);
-INSERT INTO utilisateur (id, mode_passe, prenom, role, user_name, livreur_id) VALUES (2, '213', 'lionel', 'client', 'messi', NULL);
+INSERT INTO utilisateur (id, mode_passe, nom,prenom, role, email, livreur_id) VALUES (1, '123', 'abdou','diallo', 'admin', 'diallo@example.com', NULL);
+INSERT INTO utilisateur (id, mode_passe, nom,prenom, role, email, livreur_id) VALUES (2, '213', 'lionel','messi', 'client', 'messi@psg.com', NULL);
 
-INSERT INTO utilisateur (id, mode_passe, prenom, role, user_name, livreur_id) VALUES  (3, '345', 'tonton', 'livreur', 'capuccino', null);
-INSERT INTO livreur (id, adresse, code_postale, nom, num_tel, prenom, ville, utilisateur_id) VALUES (2, '3 rue george', '94450', 'capuccino', '651123456', 'tonton', 'sucy', 3);
-INSERT INTO client (id, adresse, code_postale, etage, mail, nom, numero_tel, prenom, ville, utilisateur_id) VALUES (1, '2 rue des tilleuls', '94470', 6, 'dias94@gmail.com', 'messi', '0145991457', 'lionel', 'creteil', 2);
+INSERT INTO utilisateur (id, mode_passe, nom,prenom, role, email, livreur_id) VALUES  (3, '345', 'tonton','tonton', 'livreur', 'capuccino@capu.com', null);
+INSERT INTO livreur (id, adresse, code_postale, nom,prenom, num_tel, ville, utilisateur_id) VALUES (2, '3 rue george', '94450', 'capuccino','tonton', '651123456', 'sucy', 3);
+INSERT INTO client (id, adresse, code_postale, etage, mail, nom, prenom,numero_tel, ville, utilisateur_id) VALUES (1, '2 rue des tilleuls', '94470', 6, 'dias94@gmail.com','leo', 'messi', '0145991457', 'creteil', 2);
 INSERT INTO panier (id,client_id,etat_Panier) VALUES (1,1,true);
 UPDATE  utilisateur SET livreur_id=2 where id=3;
 

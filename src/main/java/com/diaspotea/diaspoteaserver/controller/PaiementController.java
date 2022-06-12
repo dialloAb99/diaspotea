@@ -95,7 +95,7 @@ public class PaiementController {
         panierService.modifierPanier(panier);
         attr.addFlashAttribute("dateCommande",commande.getDateCommande());
         attr.addFlashAttribute("dateLivraison",commande.getDateLivraison());
-        attr.addFlashAttribute("montant",paiementDto.getPrixTotal()+" "+ChargeRequest.Currency.EUR.toString());
+        attr.addFlashAttribute("montant",paiementDto.getPrixTotal()+" "+ ChargeRequest.Currency.EUR);
         return new RedirectView("/result", true);
     }
     @GetMapping("/result")

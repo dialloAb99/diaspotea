@@ -2,11 +2,9 @@ package com.diaspotea.diaspoteaserver.controller;
 
 import com.diaspotea.diaspoteaserver.dto.*;
 import com.diaspotea.diaspoteaserver.models.*;
-import com.diaspotea.diaspoteaserver.services.MenuService;
-import com.diaspotea.diaspoteaserver.services.ProduitService;
-import com.diaspotea.diaspoteaserver.services.ProduitTarifService;
-import com.diaspotea.diaspoteaserver.services.TypeService;
+import com.diaspotea.diaspoteaserver.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -24,12 +22,14 @@ public class AdminController {
     private final MenuService menuService;
     private final TypeService typeService;
     private final ProduitTarifService produitTarifService;
+    private final TailleService tailleService;
 
-    public AdminController(ProduitService produitService, MenuService menuService, TypeService typeService, ProduitTarifService produitTarifService) {
+    public AdminController(ProduitService produitService, MenuService menuService, TypeService typeService, ProduitTarifService produitTarifService, TailleService tailleService) {
         this.produitService = produitService;
         this.menuService = menuService;
         this.typeService = typeService;
         this.produitTarifService = produitTarifService;
+        this.tailleService = tailleService;
     }
 
     @Autowired
@@ -40,6 +40,7 @@ public class AdminController {
     }
 
     @GetMapping("/produits")
+    @PreAuthorize("hasAuthority('admin')")
     public String voirProduits(Model model) {
         List<Produit> produits = produitService.recupereToutProduits();
         List<Object> produitDtos = new ArrayList<>();
@@ -99,7 +100,7 @@ public class AdminController {
         return "admin/modifierProduit";
     }
 
-    @PostMapping("/modifierProduit/{id}/{tailleId}")
+    @PutMapping("/modifierProduit/{id}/{tailleId}")
     public String produitModifier(Model model, @Valid ModifierProduitDto produitDto, @PathVariable int tailleId, RedirectAttributes attr) {
         Produit produit = produitService.recupererProduit(produitDto.getId());
         if (produit == null) {
@@ -119,7 +120,7 @@ public class AdminController {
         produit.setId(produitDto.getId());
         produit.setNom(produitDto.getNom());
         produit.setDescription(produitDto.getDescription());
-        produitService.modifierproduit(produit);
+        produitService.modifierProduit(produit);
         attr.addFlashAttribute("status", "article à etait bien mise à jour");
         return "redirect:/admin/produits";
     }
@@ -128,7 +129,7 @@ public class AdminController {
     public String deleteProduit(@PathVariable int id, @PathVariable int tailleId, RedirectAttributes attr) {
         Produit produit = produitService.recupererProduit(id);
         produit.removeProduitTarif(id, tailleId);
-        produitService.modifierproduit(produit);
+        produitService.modifierProduit(produit);
         attr.addFlashAttribute("status", "article à été bien supprimer");
         return "redirect:/admin/produits";
     }
@@ -148,7 +149,7 @@ public class AdminController {
                 .map(produit ->
                     new NomProduitDto(produit.getProduitTarifID(),produit.getProduit().getNom(),new TailleDto(produit.getTaille().getId(),produit.getTaille().getName()))
                 ).collect(Collectors.toList());
-        ModifierMenuDto modifierMenuDto = new ModifierMenuDto(menu.getId(), menu.getNom(), menu.getDescription(), menu.getPrix(), nomProduitDtos);
+        ModifierMenuDto modifierMenuDto = new ModifierMenuDto(menu.getId(), menu.getNom(), menu.getDescription(), Math.round(menu.getPrix()), nomProduitDtos);
         model.addAttribute("produit", modifierMenuDto);
         return "admin/modifierProduit";
     }
@@ -158,13 +159,40 @@ public class AdminController {
         Menu menu = menuService.recupereMenu(menuDto.getId());
         menu.setNom(menuDto.getNom());
         menu.setDescription(menuDto.getDescription());
-        menu.setPrix(menu.getPrix());
+        menu.setPrix(menuDto.getPrix());
         List<Produit> produits = new ArrayList<>();
         menu.getProduits().removeIf(produit -> menuDto.getProduits()
                 .stream()
                 .noneMatch(produitDto -> produitDto.getProduitTarifID() == produit.getProduitTarifID()));
         menuService.modifierMenu(menu);
         attr.addFlashAttribute("status", "Le menu à été bien modifier");
+        return "redirect:/admin/produits";
+
+    }
+    @GetMapping("/produit/ajouter")
+    public String ajouterProduit(Model model){
+        List<TailleDto> tailles=tailleService.recupererTailles();
+        List<TypeProduitDto> types=typeService.getAll();
+        model.addAttribute("tailles",tailles);
+        model.addAttribute("types",types);
+        return "admin/ajouterProduit";
+    }
+    @PostMapping("/produit/ajouter")
+    public  String ajouterProduit(@Valid CreerProduitDto creerProduitDto,RedirectAttributes attr) {
+        Produit produit=new Produit();
+        ProduitTarif produitTarif= new ProduitTarif();
+        produitTarif.setProduit(produit);
+       Taille taille= tailleService.recupererTaille(creerProduitDto.getTailleId());
+       Type type=typeService.getType(creerProduitDto.getTypeId());
+        produitTarif.setTaille(taille);
+        produitTarif.setProduitTarifID(new ProduitTarifID(produit.getId(),taille.getId()));
+        produitTarif.setPrix(creerProduitDto.getPrix());
+        produit.setTypeProduit(type);
+        produit.setNom(creerProduitDto.getNom());
+        produit.setDescription(creerProduitDto.getDescription());
+        produit.ajouterProduitTarif(produitTarif);
+        produitService.modifierProduit(produit);
+        attr.addFlashAttribute("status", "Le produit à été bien ajouté");
         return "redirect:/admin/produits";
 
     }

@@ -11,4 +11,5 @@ public interface TypeRepository extends JpaRepository<Type, Integer> {
 
     @Query("select new com.diaspotea.diaspoteaserver.dto.TypeProduitDto(t.id,t.nom) from Type t")
     List<TypeProduitDto> findAllTypeProduitDto();
+
 }

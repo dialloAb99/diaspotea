@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 
 public class LigneDecommandeService {
-    private LigneDeCommandeRepository ligneDeCommandeRepository;
+    private final LigneDeCommandeRepository ligneDeCommandeRepository;
     @Autowired
     public LigneDecommandeService(LigneDeCommandeRepository ligneDeCommandeRepository){
         this.ligneDeCommandeRepository=ligneDeCommandeRepository;

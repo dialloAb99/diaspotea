@@ -7,14 +7,17 @@
 </head>
 <body>
 <div th:replace="fragments/header :: menu(activeTab='home')"/>
-<form th:action="${ produit.class.name == 'com.diaspotea.diaspoteaserver.dto.ProduitDto' ? '/admin/modifierProduit/'+produit.id+'/'+produit.tailleId : '/admin/modifierMenu/'+ produit.id }" th:method="put" th:object="${produit}">
+<p th:text="${produit.class.name}"></p>
+<form th:action="${ produit.class.name == 'com.diaspotea.diaspoteaserver.dto.ModifierProduitDto' ? '/admin/modifierProduit/'+produit.id+'/'+produit.tailleId : '/admin/modifierMenu/'+ produit.id }" th:method="put" th:object="${produit}">
+    <input type="hidden" name="_method" value="put">
     <input name="nom" th:field="*{nom}">
     <input name="description" th:field="*{description}" placeholder="description produit">
     <input name="id" th:field="*{id}" hidden>
     <input name="tarif" th:field="*{prix}">
+
     <input name="tailleId" th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.ProduitDto'}" th:field="*{tailleId}"  hidden>
         <input type="submit"  value="modifier produit">
-    <table class="table">
+    <table class="table" th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.MenuDto'}" >
         <thead class="thead-primary">
         <tr>
             <th>&nbsp;</th>

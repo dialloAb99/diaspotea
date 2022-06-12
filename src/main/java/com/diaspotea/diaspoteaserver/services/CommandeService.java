@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 
 public class CommandeService {
-    private CommandeRepository commandeRepository;
+    private final CommandeRepository commandeRepository;
     public CommandeService(CommandeRepository commandeRepository){
         {this.commandeRepository=commandeRepository;}
     }

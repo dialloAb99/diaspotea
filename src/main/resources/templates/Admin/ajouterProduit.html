@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/header :: header-css"/>
+    <meta charset="UTF-8">
+    <title>ajpouterProduit</title>
+</head>
+<body>
+<div th:replace="fragments/header :: menu(activeTab='home')"/>
+
+<form action="/admin/produit/ajouter" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label class="form-label" for="nom"> nom</label>
+        <input class="form-control" name="nom" id="nom" placeholder="nom du produit" >
+
+    </div>
+    <div class="mb-3">
+    <label class="form-label" for="description"> Description</label>
+    <input class="form-control" name="description" id="description" placeholder="description produit" >
+    </div>
+
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Photo</label>
+        <input class="form-control" type="file" accept="image/**" name="photo" id="formFile">
+    </div>
+    <select class="form-select" name="tailleId">
+        <option selected value="">Taille produit</option>
+        <option th:each="taille :${tailles}"  th:value="${taille.id}"  th:text="${taille.name}"></option>
+    </select>
+    <select class="form-select" name="typeId">
+        <option selected>type  produit</option>
+        <option th:each="type :${types}"  th:value="${type.id}"  th:text="${type.nom}"></option>
+    </select>
+    <input type="number"  min="0.0"  max="9999999.0"  step="0.01" name="prix">
+
+    <button>ajouter produit</button>
+</form>
+
+</body>
+</html>

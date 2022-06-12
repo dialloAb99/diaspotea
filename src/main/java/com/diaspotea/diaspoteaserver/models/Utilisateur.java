@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.lang.Nullable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -24,7 +25,9 @@ public class Utilisateur {
     @Id
     @GeneratedValue(strategy=IDENTITY)
     private int id;
-    private String userName;
+    @Column(unique = true)
+    private String email;
+    private String nom;
     private String prenom;
     private String role;
     private  String modePasse;

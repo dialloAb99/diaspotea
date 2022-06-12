@@ -11,7 +11,7 @@ import java.util.ArrayList;
 @Service
 public class CategorieService {
     //c'est un attribut de la clase
-    private CategorieRepository categorieRepository ;
+    private final CategorieRepository categorieRepository ;
     @Autowired
     //un constructeur qui cree l'objet
     public CategorieService(CategorieRepository categorieRepository) {

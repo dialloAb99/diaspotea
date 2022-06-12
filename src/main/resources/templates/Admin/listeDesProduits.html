@@ -55,7 +55,7 @@
                                     <span th:text="${produit.produitTarifDto.taille.name}" th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.ProduitDto' }">taille du produit</span>
                                 </div>
                             </td>
-                            <td  th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.MenuDto' }" th:text="${produit.prix}">prix €</td>
+                            <td  th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.MenuDto' }" th:text="${#numbers.formatDecimal(produit.prix,0,2)}">prix €</td>
                             <td  th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.ProduitDto' }" th:text="${produit.produitTarifDto.prix}">prix €</td>
                             <td th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.ProduitDto' }">
                                 <a th:href="'/admin/modifierProduit/'+${produit.id}+'/'+${produit.produitTarifDto.taille.id}">modifier</a>

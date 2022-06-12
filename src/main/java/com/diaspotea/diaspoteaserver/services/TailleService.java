@@ -1,13 +1,16 @@
 package com.diaspotea.diaspoteaserver.services;
 
+import com.diaspotea.diaspoteaserver.dto.TailleDto;
 import com.diaspotea.diaspoteaserver.models.Taille;
 import com.diaspotea.diaspoteaserver.repository.TailleRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 
 public class TailleService {
-    private TailleRepository tailleRepository;
+    private final TailleRepository tailleRepository;
     public TailleService(TailleRepository tailleRepository){
         {this.tailleRepository=tailleRepository;}
     }
@@ -29,4 +32,7 @@ public class TailleService {
     }
 
 
+    public List<TailleDto> recupererTailles() {
+        return  tailleRepository.recupereTailleDtos();
+    }
 }

@@ -35,7 +35,7 @@ public class ProduitServiceTest {
     void modifierProduit(){
         Produit produit=produitService.recupererProduit(1);
         produit.setDescription("Tysane au Yata");
-        Produit produitSauvegarder=produitService.modifierproduit(produit);
+        Produit produitSauvegarder=produitService.modifierProduit(produit);
         assertThat(produitSauvegarder.getDescription()).isEqualTo(produit.getDescription());
     }
     @Test
@@ -51,7 +51,7 @@ public class ProduitServiceTest {
         Categorie categorie=categorieService.getCategorie(1);
         Produit produit=produitService.recupererProduit(1);
         produit.addCategorie(categorie);
-        Produit ajouterCategorieAuProduit=produitService.modifierproduit(produit);
+        Produit ajouterCategorieAuProduit=produitService.modifierProduit(produit);
         assertThat(ajouterCategorieAuProduit.getCategories())
                 .asList()
                 .contains(categorie);

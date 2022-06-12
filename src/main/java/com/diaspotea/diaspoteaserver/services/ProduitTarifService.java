@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 
 public class ProduitTarifService {
-    private ProduitTarifRepository produitTarifRepository;
+    private final ProduitTarifRepository produitTarifRepository;
     @Autowired
     public ProduitTarifService(ProduitTarifRepository produitTarifRepository){
         {this.produitTarifRepository=produitTarifRepository;}

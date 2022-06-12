@@ -1,7 +1,9 @@
 package com.diaspotea.diaspoteaserver.controller;
 
+import com.diaspotea.diaspoteaserver.Autorites;
 import com.diaspotea.diaspoteaserver.dto.MenuPanierDto;
 import com.diaspotea.diaspoteaserver.dto.ProduitPanierDTO;
+import com.diaspotea.diaspoteaserver.dto.UtilisateurInscriptionDto;
 import com.diaspotea.diaspoteaserver.models.Categorie;
 import com.diaspotea.diaspoteaserver.models.Menu;
 import com.diaspotea.diaspoteaserver.models.Produit;
@@ -13,17 +15,21 @@ import com.diaspotea.diaspoteaserver.services.UtilisateurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Controller
 
 public class HomeController {
-    private CategorieService categorieService;
+    private final CategorieService categorieService;
     private final ProduitService produitService;
-    private MenuService menuService;
-    private UtilisateurService utilisateurService;
+    private final MenuService menuService;
+    private final UtilisateurService utilisateurService;
     @Autowired
     public HomeController(CategorieService categorieService, ProduitService produitService, MenuService menuService, UtilisateurService utilisateurService){
         this.categorieService = categorieService;
@@ -81,5 +87,23 @@ public class HomeController {
         model.addAttribute("monCompte",utilisateur);
         return "monCompte";
     }
+    @GetMapping("/inscription")
+    public String inscription(UtilisateurInscriptionDto utilisateurInscriptionDto){
+        return "formInscription";
+    }
+    @PostMapping("/inscription")
+    public String inscription(@Valid UtilisateurInscriptionDto utilisateurInscriptionDto, BindingResult bindingResult,Model model){
+        if(bindingResult.hasErrors()){
+                return  "formInscription";
+        }
+        if(!utilisateurService.exist(utilisateurInscriptionDto.getEmail())) {
+            utilisateurService.ajouterUtilisateur(utilisateurInscriptionDto, Autorites.CLIENT.toString());
+        }else {
+            bindingResult.addError(new FieldError("utilisateurInscriptionDto","email","un compte existe déja avec ce email"));
+            return  "formInscription";
+        }
+        return "redirect:/";
+    }
+
 
 }

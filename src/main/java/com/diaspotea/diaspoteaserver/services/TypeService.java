@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 
 public class TypeService {
-    private TypeRepository typeRepository;
+    private final TypeRepository typeRepository;
     @Autowired
     public TypeService(TypeRepository repository){
         typeRepository=repository;
@@ -36,4 +36,5 @@ public class TypeService {
     public List<TypeProduitDto> getAll() {
         return  typeRepository.findAllTypeProduitDto();
     }
+
 }

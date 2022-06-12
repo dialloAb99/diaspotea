@@ -28,7 +28,7 @@ public class UtilisateurServiceTest {
     @Transactional
     void modifierUtilisateur() {
         Utilisateur utilisateur = utilisateurService.recupereUtilisateur(1);
-        utilisateur.setUserName("Patrick");
+        utilisateur.setEmail("Patrick");
         Utilisateur utilisateurModifier = utilisateurService.modifierUtilisateur(utilisateur);
         assertThat(utilisateurModifier).isEqualTo(utilisateur);
     }

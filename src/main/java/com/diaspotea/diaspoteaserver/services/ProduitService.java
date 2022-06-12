@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 
 public class ProduitService {
-    private ProduitRepository produitRepository;
+    private final ProduitRepository produitRepository;
     public ProduitService(ProduitRepository produitRepository){
         {this.produitRepository=produitRepository;}
 
@@ -24,7 +24,7 @@ public class ProduitService {
         return produitRepository.findById(id).orElse(null);
     }
 
-    public Produit modifierproduit(Produit produit) {
+    public Produit modifierProduit(Produit produit) {
         return produitRepository.save(produit);
     }
 

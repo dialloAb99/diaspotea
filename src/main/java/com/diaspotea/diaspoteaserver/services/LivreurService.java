@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 
 public class LivreurService {
-    private LivreurRepository livreurRepository;
+    private final LivreurRepository livreurRepository;
     public LivreurService(LivreurRepository livreurRepository){
         {this.livreurRepository=livreurRepository;}
     }

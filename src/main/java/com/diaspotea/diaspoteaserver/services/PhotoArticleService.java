@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 
 public class PhotoArticleService {
-    private PhotoArticleRepository photoArticleRepository;
+    private final PhotoArticleRepository photoArticleRepository;
     @Autowired
     public PhotoArticleService(PhotoArticleRepository photoArticleRepository){
         {this.photoArticleRepository=photoArticleRepository;}

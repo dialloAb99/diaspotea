@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 
 public class CommuneService {
-    private CommuneRepository communeRepository;
+    private final CommuneRepository communeRepository;
     private CommuneService(CommuneRepository communeRepository){
         {this.communeRepository=communeRepository;}
     }
