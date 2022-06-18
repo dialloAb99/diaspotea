@@ -55,12 +55,19 @@
                                 <div th:if="${ligneDeCommande.class.name == 'com.diaspotea.diaspoteaserver.models.LigneDeCommandeMenu'}">
                                     <p><strong th:text="${ligneDeCommande.menu.nom}"></strong></p>
                                 </div>
-                                <button type="button" class="btn   btn-danger btn-sm me-1 mb-2"
-                                        data-mdb-toggle="tooltip"
-                                        title="Remove item" th:onclick="'supprimerLigneDeCommande('+${ligneDeCommande.id}+')'">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-
+                                <form th:action="'/supprimerLigneDeCommande/'+${ligneDeCommande.id}" th:method="delete">
+                                    <input type="hidden" name="_method" value="delete">
+                                    <input
+                                            type="hidden"
+                                            th:name="${_csrf.parameterName}"
+                                            th:value="${_csrf.token}" />
+                                    <input type="hidden"/>
+                                    <button type="submit" class="btn   btn-danger btn-sm me-1 mb-2"
+                                            data-mdb-toggle="tooltip"
+                                            title="Remove item" >
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </form>
                                 <!-- Data -->
                             </div>
 

@@ -17,7 +17,7 @@ public class Panier {
     private int id;
     @OneToMany(mappedBy = "panier", cascade = CascadeType.ALL)
     private List<LigneDeCommande> ligneDeCommandes;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     private Client client;
     private boolean etatPanier;
 

@@ -14,10 +14,9 @@
     <input name="description" th:field="*{description}" placeholder="description produit">
     <input name="id" th:field="*{id}" hidden>
     <input name="tarif" th:field="*{prix}">
-
     <input name="tailleId" th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.ProduitDto'}" th:field="*{tailleId}"  hidden>
         <input type="submit"  value="modifier produit">
-    <table class="table" th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.MenuDto'}" >
+    <table class="table" th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.ModifierMenuDto'}" >
         <thead class="thead-primary">
         <tr>
             <th>&nbsp;</th>

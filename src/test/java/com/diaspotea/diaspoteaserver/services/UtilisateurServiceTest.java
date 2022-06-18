@@ -41,10 +41,9 @@ public class UtilisateurServiceTest {
     }
     @Test
     void recupererUtilisateurLivreur(){
-     Utilisateur utilisateur=  utilisateurService.recupereUtilisateur(3);
-        Livreur livreur=utilisateur.getLivreur();
-     assertThat(livreur).isNotNull();
-        assertThat(livreur.getId()).isEqualTo(2);
+     Livreur utilisateur= (Livreur) utilisateurService.recupereUtilisateur(3);
+     assertThat(utilisateur).isNotNull();
+        assertThat(utilisateur.getId()).isEqualTo(3);
 
 
     }

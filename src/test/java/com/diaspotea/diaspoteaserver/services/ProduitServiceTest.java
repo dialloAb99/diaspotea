@@ -8,6 +8,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.stream.Collectors;
+
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 @SpringBootTest
 
@@ -61,7 +64,8 @@ public class ProduitServiceTest {
     void ProduitAunProduitTarif(){
         ProduitTarif produitTarifRecuperer=produitTarifService.recupereProduitTarif(new ProduitTarifID(1,10));
         Produit produit=produitService.recupererProduit(1);
-        ProduitTarif produitTarif=produit.getProduitTarifs().get(0);
+        ProduitTarif produitTarif=produit.getProduitTarifs().stream().filter((produitTarif1 -> produitTarif1.getProduitTarifID()==produitTarifRecuperer.getProduitTarifID()))
+                .collect(Collectors.toList()).get(0);
         assertThat(produitTarifRecuperer).isEqualTo(produitTarif);
     }
 }

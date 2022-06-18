@@ -2,7 +2,6 @@ package com.diaspotea.diaspoteaserver.services;
 
 import com.diaspotea.diaspoteaserver.models.Client;
 import com.diaspotea.diaspoteaserver.models.LigneDeCommande;
-import com.diaspotea.diaspoteaserver.models.LigneDeCommandeProduit;
 import com.diaspotea.diaspoteaserver.models.Panier;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +19,7 @@ class PanierServiceTest {
     @Autowired
     private LigneDecommandeService ligneDecommandeService;
     @Autowired
-    private ClientService clientService;
+    private UtilisateurService utilisateurService;
     @Test
     @Transactional
     void AjouterPanier(){
@@ -36,6 +35,7 @@ class PanierServiceTest {
     void modifierPanier(){
         Panier panier=panierService.recuperePanier(1);
         LigneDeCommande ligneDeCommandeProduit =ligneDecommandeService.recupereLigneDeCommande(9);
+        Client client=panier.getClient();
         panier.ajouterLigneDeCommande(ligneDeCommandeProduit);
         Panier panierModifier=panierService.modifierPanier(panier);
         assertThat(panierModifier).isEqualTo(panier);
@@ -51,14 +51,14 @@ class PanierServiceTest {
 
     @Test
     void panierEstActif() {
-        Client client=clientService.recupereClient(1);
+        Client client=utilisateurService.recuperUtilisateurParType(2, Client.class);
         boolean clientAunPanier=panierService.panierEstActif(client);
         assertThat(clientAunPanier).isTrue();
     }
 
     @Test
     void testPanierEstActif() {
-        boolean clientAunPanier=panierService.panierEstActif(1);
+        boolean clientAunPanier=panierService.panierEstActif(2);
         assertThat(clientAunPanier).isTrue();
     }
 }

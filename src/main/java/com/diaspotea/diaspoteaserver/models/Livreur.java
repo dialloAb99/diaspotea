@@ -3,34 +3,37 @@ package com.diaspotea.diaspoteaserver.models;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
-import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import java.util.Objects;
 import java.util.Set;
-
-import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Setter
 @Getter
-public class Livreur {
-    @Id
-    @GeneratedValue(strategy=IDENTITY)
-    private int id;
-    @Column(name ="nom")
-    private String name;
-    private String prenom;
-    private String adresse;
-    @Column(name = "code_postale")
-    private  String codePostale;
-    @Column(name="num_tel")
-    private  String numeroTelephone;
-    @Column(name="ville")
-    private  String ville;
-    @OneToOne
-    private  Utilisateur utilisateur;
-    @ManyToMany
+@DiscriminatorValue(value = "livreur")
+public class Livreur extends Utilisateur{
+    @ManyToMany(cascade={CascadeType.PERSIST,CascadeType.MERGE})
     @JoinTable(name="livreur_commune",
             joinColumns={@JoinColumn(name="livreur_id")},
             inverseJoinColumns={@JoinColumn(name="commune_id")})
     private Set<Commune> communes;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Livreur)) return false;
+        if (!super.equals(o)) return false;
+        Livreur livreur = (Livreur) o;
+        return Objects.equals(communes, livreur.communes);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), communes);
+    }
 }

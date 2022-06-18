@@ -24,9 +24,6 @@
     </style>
 
 
-    <!-- Custom styles for this template -->
-    <link href="form-validation.css" rel="stylesheet">
-    <script defer th:src="@{/resources/js/checkout.js}"></script>
 </head>
 <body class="bg-light">
 <div th:replace="fragments/header :: menu(activeTab='home')"/>
@@ -118,6 +115,10 @@
                             <label class="form-check-label" for="paypal">PayPal</label>
                         </div>
                     </div>
+                    <input
+                            type="hidden"
+                            th:name="${_csrf.parameterName}"
+                            th:value="${_csrf.token}" />
                     <input type="hidden" name="panierId" th:field="*{panierId}">
                     <input type="hidden" name="clientId" th:field="*{clientId}">
                     <input type='hidden' th:value='${paiementDto.calculePrixTotal(paiementDto.ligneDeCommandes)}' name='prixTotal' />
@@ -127,7 +128,7 @@
                             th:attr='data-key=${stripePublicKey},
                          data-amount=${paiementDto.calculePrixTotal(paiementDto.ligneDeCommandes)*100},
                            data-currency=${currency}'
-                            data-name='Baeldung'
+                            data-name='DiaspoTea'
                             data-description='Spring course checkout'
                             data-image='http://www.baeldung.com/wp-content/themes/baeldung/favicon/android-chrome-192x192.png'
                             data-locale='auto'
@@ -151,10 +152,5 @@
         </ul>
     </footer>
 </div>
-
-
-<script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-<script src="form-validation.js"></script>
 </body>
 </html>

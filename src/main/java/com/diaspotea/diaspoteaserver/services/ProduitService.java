@@ -1,6 +1,5 @@
 package com.diaspotea.diaspoteaserver.services;
 
-import com.diaspotea.diaspoteaserver.models.Categorie;
 import com.diaspotea.diaspoteaserver.models.Produit;
 import com.diaspotea.diaspoteaserver.repository.ProduitRepository;
 import org.springframework.stereotype.Service;
@@ -42,8 +41,8 @@ public class ProduitService {
         return produitRepository.findAll();
     }
 
-    public List<Produit> recupererProduitParCategorie(Categorie categorie) {
-        return produitRepository.findByCategoriesLike(categorie);
+    public List<Produit> recupererProduitParCategorie(String categorieName) {
+        return produitRepository.findByCategories_NomContaining(categorieName);
 
     }
 }

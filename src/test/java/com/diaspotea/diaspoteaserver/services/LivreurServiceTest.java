@@ -24,16 +24,16 @@ public class LivreurServiceTest {
     @Test
     @Transactional
     void modifierLivreur(){
-        Livreur livreur=livreurService.recupereLivreur(2);
-        livreur.setName("grand professeur");
+        Livreur livreur=livreurService.recupereLivreur(3);
+        livreur.setNom("grand professeur");
         Livreur livreurModifier=livreurService.modifierLivreur(livreur);
         assertThat(livreurModifier).isEqualTo(livreur);
     }
     @Test
     @Transactional
     void supprimerLivreur(){
-        livreurService.deleteLivreur(2);
-        Livreur livreur=livreurService.recupereLivreur(2);
+        livreurService.deleteLivreur(3);
+        Livreur livreur=livreurService.recupereLivreur(3);
         assertThat(livreur).isNull();
     }
 }

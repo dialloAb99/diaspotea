@@ -1,5 +1,6 @@
 package com.diaspotea.diaspoteaserver.security;
 
+import com.diaspotea.diaspoteaserver.security.handler.MySimpleUrlAuthenticationSuccessHandler;
 import com.diaspotea.diaspoteaserver.services.JpaUserDetailService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -32,11 +34,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     //pour configurer les autorisations
     protected void configure(HttpSecurity httpSecurity)throws Exception{
         // autorisation pour toutes les toutes les pages
-        httpSecurity.authorizeRequests().antMatchers("/","/petit-dejeuner","/dessert","/boisson","/monpanier/{id}","/inscription","/resources/**","/webjars/**","/panier/ajouter/menu").permitAll()
+        httpSecurity.cors().and()
+                .authorizeRequests().antMatchers("/","/petit-dejeuner","/dessert","/boisson","/inscription","/resources/**","/webjars/**","/panier/ajouter/menu").permitAll()
+                .antMatchers("/admin/**").hasAuthority("admin")
+                .antMatchers("/paiement/**").hasAuthority("client")
                 .anyRequest().authenticated();
-        httpSecurity.formLogin();
+        httpSecurity.formLogin().successHandler(myAuthenticationSuccessHandler());
+        httpSecurity.csrf();
 
 
+    }
+    @Bean
+    public AuthenticationSuccessHandler myAuthenticationSuccessHandler(){
+        return new MySimpleUrlAuthenticationSuccessHandler();
     }
     @Bean
     CorsConfigurationSource corsConfigurationSource() {

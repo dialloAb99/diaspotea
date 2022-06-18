@@ -1,12 +1,26 @@
 package com.diaspotea.diaspoteaserver.controller;
 
 import com.diaspotea.diaspoteaserver.dto.PaiementDto;
-import com.diaspotea.diaspoteaserver.models.*;
-import com.diaspotea.diaspoteaserver.services.*;
-import com.stripe.exception.*;
+import com.diaspotea.diaspoteaserver.models.ChargeRequest;
+import com.diaspotea.diaspoteaserver.models.Client;
+import com.diaspotea.diaspoteaserver.models.Commande;
+import com.diaspotea.diaspoteaserver.models.Livreur;
+import com.diaspotea.diaspoteaserver.models.Panier;
+import com.diaspotea.diaspoteaserver.models.UserPrincipal;
+import com.diaspotea.diaspoteaserver.services.CommandeService;
+import com.diaspotea.diaspoteaserver.services.LivreurService;
+import com.diaspotea.diaspoteaserver.services.PanierService;
+import com.diaspotea.diaspoteaserver.services.StripeService;
+import com.diaspotea.diaspoteaserver.services.UtilisateurService;
+import com.stripe.exception.APIConnectionException;
+import com.stripe.exception.APIException;
+import com.stripe.exception.AuthenticationException;
+import com.stripe.exception.CardException;
+import com.stripe.exception.InvalidRequestException;
 import com.stripe.model.Charge;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +41,7 @@ public class PaiementController {
     private final PanierService panierService;
     private final LivreurService livreurService;
     private final CommandeService commandeService;
-    private  final ClientService clientService;
+    private final UtilisateurService utilisateurService;
 
     @Value("${STRIPE_PUBLIC_KEY}")
     private String stripePublicKey;
@@ -35,18 +49,18 @@ public class PaiementController {
     private final StripeService paymentsService;
 
     @Autowired
-    public PaiementController(PanierService panierService, LivreurService livreurService, CommandeService commandeService, ClientService clientService, StripeService paymentsService) {
+    public PaiementController(PanierService panierService, LivreurService livreurService, CommandeService commandeService, UtilisateurService utilisateurService, StripeService paymentsService) {
         this.panierService = panierService;
         this.livreurService = livreurService;
         this.commandeService = commandeService;
-        this.clientService = clientService;
+        this.utilisateurService = utilisateurService;
         this.paymentsService = paymentsService;
     }
 
     @GetMapping("/paiement/{panierId}")
-    public String paiement(@PathVariable Integer panierId, Model model) {
+    public String paiement(@PathVariable Integer panierId, Model model, Authentication authentication) {
         Panier panier = panierService.recuperePanier(panierId);
-
+        UserPrincipal currentUser=(UserPrincipal)  authentication.getPrincipal();
         Client client = panier.getClient();
 
         PaiementDto paiementDto = new PaiementDto(client.getId(), client.getAdresse(), false, client.getCodePostale(), client.getVille(), client.getEtage(), panierId, panier.getLigneDeCommandes(),0.0F);
@@ -58,7 +72,7 @@ public class PaiementController {
 
 
     @PostMapping("/paiement")
-    public RedirectView paiement(PaiementDto paiementDto, ChargeRequest chargeRequest, RedirectAttributes attr) {
+    public RedirectView paiement(PaiementDto paiementDto, ChargeRequest chargeRequest, RedirectAttributes attr,  Authentication authentication) {
         chargeRequest.setDescription("Example charge");
         chargeRequest.setCurrency(ChargeRequest.Currency.EUR);
         chargeRequest.setAmount((int) (paiementDto.getPrixTotal() * 100));
@@ -77,8 +91,8 @@ public class PaiementController {
             throw new RuntimeException(e);
         }
         Panier panier=panierService.recuperePanier(paiementDto.getPanierId());
-        Livreur livreur=livreurService.recupereLivreur(2);
-        Client client=clientService.recupereClient(paiementDto.getClientId());
+        Livreur livreur=livreurService.recupereLivreur(3);
+        Client client=utilisateurService.recuperUtilisateurParType(paiementDto.getClientId(),Client.class);
         Commande commande=new Commande();
         commande.setAdresse(paiementDto.getAdresse());
         commande.setCodePostale(paiementDto.getCodePostale());

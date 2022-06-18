@@ -160,10 +160,6 @@ public class AdminController {
         menu.setNom(menuDto.getNom());
         menu.setDescription(menuDto.getDescription());
         menu.setPrix(menuDto.getPrix());
-        List<Produit> produits = new ArrayList<>();
-        menu.getProduits().removeIf(produit -> menuDto.getProduits()
-                .stream()
-                .noneMatch(produitDto -> produitDto.getProduitTarifID() == produit.getProduitTarifID()));
         menuService.modifierMenu(menu);
         attr.addFlashAttribute("status", "Le menu à été bien modifier");
         return "redirect:/admin/produits";

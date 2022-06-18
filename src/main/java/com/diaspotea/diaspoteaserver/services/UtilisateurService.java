@@ -38,7 +38,6 @@ public class UtilisateurService {
         Utilisateur utilisateur=new Utilisateur();
         utilisateur.setEmail(utilisateurInscriptionDto.getEmail());
         utilisateur.setNom(utilisateurInscriptionDto.getNom());
-        utilisateur.setRole(role);
         utilisateur.setPrenom(utilisateurInscriptionDto.getPrenom());
         utilisateur.setModePasse(passwordEncoder.encode(utilisateurInscriptionDto.getPassword()));
         utilisateurRepository.save(utilisateur);
@@ -48,5 +47,9 @@ public class UtilisateurService {
 
     public boolean exist(String email) {
         return  utilisateurRepository.existsByEmail(email);
+    }
+
+    public  <T extends Utilisateur> T recuperUtilisateurParType(Integer clientId,Class<T> type) {
+        return utilisateurRepository.findById(clientId, type);
     }
 }

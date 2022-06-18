@@ -40,4 +40,8 @@ public class CategorieService {
         //methode pour supprimer une categorie par son identifiant
         categorieRepository.deleteById(id);
     }
+
+    public Categorie getByNameContaining(String nom) {
+        return categorieRepository.findByNomContaining(nom);
+    }
 }

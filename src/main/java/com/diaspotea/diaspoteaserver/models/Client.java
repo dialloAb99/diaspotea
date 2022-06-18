@@ -7,33 +7,38 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.CascadeType;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import java.util.List;
+import java.util.Objects;
 
-import static javax.persistence.GenerationType.IDENTITY;
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
 @Entity
 @JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class,property ="id")
-public class Client {
-    @Id
-    @GeneratedValue(strategy=IDENTITY)
-    private int id;
-    private String nom;
-    private String prenom;
-    private String numeroTel;
-    private String mail;
-    private String adresse;
-    private String codePostale;
-    private String ville;
-    private String etage;
-    @OneToMany(mappedBy = "client")
+@DiscriminatorValue(value = "client")
+public class Client extends Utilisateur {
+    @OneToMany(mappedBy = "client",cascade = {CascadeType.ALL})
     private List<Commande>commandes;
-    @OneToOne
-    @JoinColumn(name = "utilisateur_ID")
-    private Utilisateur utilisateur;
-    @OneToMany(mappedBy = "client")
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Client)) return false;
+        if (!super.equals(o)) return false;
+        Client client = (Client) o;
+        return Objects.equals(commandes, client.commandes)  && Objects.equals(paniers, client.paniers);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), commandes, paniers);
+    }
+
+    @OneToMany(mappedBy = "client",cascade = {CascadeType.ALL})
     private List<Panier> paniers;
+
 }
