@@ -35,7 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity httpSecurity)throws Exception{
         // autorisation pour toutes les toutes les pages
         httpSecurity.cors().and()
-                .authorizeRequests().antMatchers("/","/petit-dejeuner","/dessert","/boisson","/inscription","/resources/**","/webjars/**","/panier/ajouter/menu").permitAll()
+                .authorizeRequests().antMatchers("/","/petit-dejeuner","/dessert","/boisson","/inscription","/resources/**","/webjars/**").permitAll()
                 .antMatchers("/admin/**").hasAuthority("admin")
                 .antMatchers("/paiement/**").hasAuthority("client")
                 .anyRequest().authenticated();
@@ -53,7 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         final CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.setAllowedOriginPatterns(List.of( "http://localhost:8080", "self"));
+        config.setAllowedOriginPatterns(List.of( "http://localhost:8080"));
         config.setMaxAge(3600L);
         config.setAllowedHeaders(List.of("Origin", "X-Requested-With", "Content-Type", "Accept", "authorization"));
         config.setAllowedMethods(List.of("POST", "GET", "PUT", "OPTIONS", "DELETE"));

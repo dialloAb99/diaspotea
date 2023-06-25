@@ -15,26 +15,31 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
-
 import java.util.Locale;
 import java.util.Objects;
 
 import static javax.persistence.GenerationType.IDENTITY;
 @AllArgsConstructor
+// un creer un constructeur sans les paramettre
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
+//stratégie d'héritage
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class,property ="id")
+// pour specifier le nom de la column discriminator
 @DiscriminatorColumn(name = "TYPE",discriminatorType = DiscriminatorType.STRING)
 public class Utilisateur {
+    //la clé primaire de table créer
     @Id
+    //Comment génerer la valeur de la clé primaire
     @GeneratedValue(strategy=IDENTITY)
     private int id;
-    @Column(unique = true)
     private String nom;
     private String prenom;
+    // c'est pour dire que l'email est unique
+    @Column(unique = true)
     private String email;
     private  String modePasse;
     private String numTel;
@@ -46,6 +51,7 @@ public class Utilisateur {
          return this.getClass().getSimpleName().toLowerCase(Locale.ROOT);
      }
     @Override
+
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Utilisateur)) return false;

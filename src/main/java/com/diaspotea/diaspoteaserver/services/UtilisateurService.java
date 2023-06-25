@@ -1,6 +1,9 @@
 package com.diaspotea.diaspoteaserver.services;
 
 import com.diaspotea.diaspoteaserver.dto.UtilisateurInscriptionDto;
+import com.diaspotea.diaspoteaserver.models.Admin;
+import com.diaspotea.diaspoteaserver.models.Client;
+import com.diaspotea.diaspoteaserver.models.Livreur;
 import com.diaspotea.diaspoteaserver.models.Utilisateur;
 import com.diaspotea.diaspoteaserver.repository.UtilisateurRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -35,7 +38,22 @@ public class UtilisateurService {
     }
 
     public void ajouterUtilisateur(UtilisateurInscriptionDto utilisateurInscriptionDto,String role) {
-        Utilisateur utilisateur=new Utilisateur();
+        Utilisateur utilisateur=null;
+        switch (role.toLowerCase()){
+            case "client":
+                utilisateur=new Client();
+                break;
+            case "admin":
+                utilisateur=new Admin();
+                break;
+            case "livreur":
+                utilisateur=new Livreur();
+                break;
+            default:
+                throw  new IllegalArgumentException("type d'utilisateur inconnu");
+
+        }
+
         utilisateur.setEmail(utilisateurInscriptionDto.getEmail());
         utilisateur.setNom(utilisateurInscriptionDto.getNom());
         utilisateur.setPrenom(utilisateurInscriptionDto.getPrenom());

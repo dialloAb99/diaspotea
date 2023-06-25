@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-
 public class ProduitService {
     private final ProduitRepository produitRepository;
     public ProduitService(ProduitRepository produitRepository){
@@ -42,7 +41,7 @@ public class ProduitService {
     }
 
     public List<Produit> recupererProduitParCategorie(String categorieName) {
-        return produitRepository.findByCategories_NomContaining(categorieName);
+        return produitRepository.findByCategorie_NomContaining(categorieName);
 
     }
 }

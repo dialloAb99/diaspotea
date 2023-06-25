@@ -52,8 +52,8 @@ public class HomeController {
         List<Produit>produits;
         produits=produitService.recupererProduitParCategorie(Categories.BOISSON.toString().toLowerCase());
         model.addAttribute("boissons",produits);
-        if (!model.containsAttribute("produitPanierDTO")) {
-            model.addAttribute("produitPanierDTO", new ProduitPanierDTO());
+        if (!model.containsAttribute("dto")) {
+            model.addAttribute("dto", new ProduitPanierDTO());
         }
         return "boissons";
     }
@@ -66,8 +66,8 @@ public class HomeController {
         desserts=produitService.recupererProduitParCategorie(Categories.DESSERT.toString().toLowerCase());
 //        j'ai ajouter un attribut dessert qui porte comme valeur la liste de dessert'
         model.addAttribute("desserts",desserts);
-        if (!model.containsAttribute("produitPanierDTO")) {
-            model.addAttribute("produitPanierDTO", new ProduitPanierDTO());
+        if (!model.containsAttribute("dto")) {
+            model.addAttribute("dto", new ProduitPanierDTO());
         }
         return "desserts";
     }
@@ -75,8 +75,8 @@ public class HomeController {
     public String petitDejeuners(Model model){
         List<Menu>petitDejeuners =menuService.recupereToutMenu();
         model.addAttribute("petitDejeuners",petitDejeuners);
-        if (!model.containsAttribute("menuPanierDto")) {
-            model.addAttribute("menuPanierDto", new MenuPanierDto());
+        if (!model.containsAttribute("dto")) {
+            model.addAttribute("dto", new MenuPanierDto());
         }
        return "petit-dejeuners";
     }

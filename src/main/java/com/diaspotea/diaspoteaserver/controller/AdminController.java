@@ -46,7 +46,7 @@ public class AdminController {
         List<Object> produitDtos = new ArrayList<>();
         List<TypeProduitDto> typeProduitDtos = typeService.getAll();
         for (Menu menu : menuService.recupereToutMenu()) {
-            MenuDto menuDto = new MenuDto(menu.getId(), menu.getNom(), menu.getDescription(), menu.getPrix());
+            MenuDto menuDto = new MenuDto(menu.getId(), menu.getNom(),menu.getImageUrl(), menu.getDescription(), menu.getPrix());
             produitDtos.add(menuDto);
         }
         for (Produit produit : produits

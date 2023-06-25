@@ -5,28 +5,13 @@
     <meta charset="UTF-8">
     <title>Petit-Dejeuner</title>
     <!--c'est le chemin pour qu'il telecharge le fichier demander -->
-    <script type="text/javascript" th:src="@{/resources/js/panier.js}"></script>
 </head>
 <body>
 <div th:replace="fragments/header :: menu(activeTab='petit-dejeuner')"/>
-<ul>
-    <li  th:each="petitDejeuner :${petitDejeuners}">
-        <p th:text="${petitDejeuner.nom}"></p>
-        <form th:action="@{/panier/ajouter/menu}" method="post" th:object="${menuPanierDto}">
-            <p th:if="${#fields.hasErrors('menuId')}" th:errors="*{menuId}"></p>
-            <input type="text" name="menuId"  th:value="${petitDejeuner.id}" hidden=""></input>
-            <p th:if="${#fields.hasErrors('menuId')}" th:errors="*{menuId}"></p>
-            <select name="quantiter" >
-                <option value="">choix de la quantiter</option>
-                <option th:each="quantite :${#numbers.sequence(1, 10)}"     th:value="${quantite}" th:text="${quantite}"></option>
-            </select>
-            <button >ajouter au panier</button>
-        </form>
-
-
-
-
+<ul class="grid" >
+    <li th:replace="fragments/productItem.html::productItem(items=${petitDejeuners},dto=${dto},action=@{/panier/ajouter/menu})">
     </li>
+
 </ul>
 
 </body>

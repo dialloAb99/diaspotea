@@ -13,12 +13,15 @@ function ajouterAuPanier(id){
         })
     })
 }
-function diminuerQuantiter(ligneDeCommandeId){
+function diminuerQuantiter(ligneDeCommandeId,csrfTokenName,csrfToken){
     fetch('/panier/diminuer/'+ligneDeCommandeId,{
         method:"PUT",
         headers:{
             "content-Type":"application/json"
         },
+        body:{
+            csrfTokenName:csrfToken
+        }
     }).then(()=>window.location.reload())
 }
 function augmenterQuantiter(ligneDeCommandeId){

@@ -8,7 +8,8 @@
 <body>
 <div th:replace="fragments/header :: menu(activeTab='home')"/>
 
-<form th:action="'/modifier-adresse-de-livraison/'+${modiferFormAdresseLivraisonDto.clientId}" th:object="${modiferFormAdresseLivraisonDto}" method="post" class ="needs-validation" novalidate>
+<form th:action="${'/modifier-adresse'}" th:object="${modiferFormAdresseLivraisonDto}" th:method="put" class ="needs-validation" novalidate>
+    <input type="hidden" name="_method" value="put">
     <div class="row g-3">
         <div class="col-12">
             <label for="address" class="form-label">Address</label>

@@ -5,10 +5,23 @@
 </head>
 <body>
 <div th:replace="fragments/header :: menu(activeTab='home')"/>
-<h1 class="titre">DiaspoTea</h1>
-<p   sec:authorize="isAuthenticated()"  th:text="${#authentication.getPrincipal().id}"></p>
-<p class="introduction">Notre salon de thé ce veut un lieu convivialité et de partage et également disponible en livraison sur commande.<br>
-    Situé à Boissy Saint-léger (94470) au 31 avenue de Paris, nous avons la prétention et la passion de vous faire découvrir notre différents variété de thé ayurvédique.</p>
+<div class="block100__inner position-relative">
+    <picture>
+        <source media="(min-width: 750px)" data-srcset="https://images.prismic.io/dammann/6a0ca9ea-224f-4eb8-ac42-f5f4c10da5d3_hp.jpg?auto=compress,format&amp;rect=0,0,3840,1960&amp;w=1920&amp;h=980" srcset="https://images.prismic.io/dammann/6a0ca9ea-224f-4eb8-ac42-f5f4c10da5d3_hp.jpg?auto=compress,format&amp;rect=0,0,3840,1960&amp;w=1920&amp;h=980">
+        <img class="block100__img d-inline-block h-auto w-100 center" data-src="https://images.prismic.io/dammann/6a0ca9ea-224f-4eb8-ac42-f5f4c10da5d3_hp.jpg?auto=compress,format&amp;rect=581,0,1021,1960&amp;w=375&amp;h=720" src="https://images.prismic.io/dammann/6a0ca9ea-224f-4eb8-ac42-f5f4c10da5d3_hp.jpg?auto=compress,format&amp;rect=581,0,1021,1960&amp;w=375&amp;h=720" alt="Tasse de thé avec fleurs de jasmin" width="1920" height="980">
+    </picture>
+    <div class="block100__content home_content px-m text-center w-100 position-absolute">
+        <h1 class="titre">DiaspoTea</h1>
+        <p class="introduction">Notre salon de thé ce veut un lieu convivialité et de partage et également disponible en livraison sur commande.<br>
+            Situé à Boissy Saint-léger (94470) au 31 avenue de Paris, nous avons la prétention et la passion de vous faire découvrir notre différents variété de thé ayurvédique.</p>
+        <div class="block100__cta pt-mm">
+            <a href="/boisson" class="btn_home btn--secondary">
+                <span>Découvrez nos thés enfleurés</span>
+            </a>
 
+
+        </div>
+    </div>
+</div>
 </body>
 </html>

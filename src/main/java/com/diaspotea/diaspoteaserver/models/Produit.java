@@ -1,11 +1,15 @@
 package com.diaspotea.diaspoteaserver.models;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.*;
-
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,21 +38,14 @@ public class Produit {
     public Produit() {
         produitTarifs=new ArrayList<>();
         ligneDeCommandes=new ArrayList<>();
-        categories=new ArrayList<>();
         photoArticles=new ArrayList<>();
 
 
     }
 
-    @ManyToMany
-    @JoinTable(name="produit_categorie",
-            joinColumns={@JoinColumn(name="produit_id")},
-            inverseJoinColumns={@JoinColumn(name="categorie_id")})
-    private List<Categorie>categories;
+    @ManyToOne
+    private Categorie categorie;
 
-    public void addCategorie(Categorie categorie) {
-        categories.add(categorie);
-    }
 
 
 

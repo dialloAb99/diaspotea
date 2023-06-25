@@ -14,6 +14,10 @@
         <input class="form-control" name="nom" id="nom" placeholder="nom du produit" >
 
     </div>
+    <input
+            type="hidden"
+            th:name="${_csrf.parameterName}"
+            th:value="${_csrf.token}" />
     <div class="mb-3">
     <label class="form-label" for="description"> Description</label>
     <input class="form-control" name="description" id="description" placeholder="description produit" >
@@ -31,7 +35,7 @@
         <option selected>type  produit</option>
         <option th:each="type :${types}"  th:value="${type.id}"  th:text="${type.nom}"></option>
     </select>
-    <input type="number"  min="0.0"  max="9999999.0"  step="0.01" name="prix">
+    <input type="number"  min="0.0"  max="9999999.0"  step="0.01" name="prix" placeholder="prix">
 
     <button>ajouter produit</button>
 </form>

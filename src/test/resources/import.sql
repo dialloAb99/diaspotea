@@ -31,9 +31,9 @@ INSERT INTO produit_tarif (prix, produit_id, taille_id) VALUES(4.5, 3, 2);
 INSERT INTO produit_tarif (prix, produit_id, taille_id) VALUES(3.70, 4, 4);
 INSERT INTO produit_tarif (prix, produit_id, taille_id) VALUES(3.80, 5, 5);
 
-INSERT  INTO menu (id,nom, description, prix) VALUES(1,'Box matinale','',15.50);
-INSERT  INTO menu (id,nom, description, prix) VALUES(2,'Box viennoiserie','',16.50);
-INSERT  INTO menu (id,nom, description, prix) VALUES(3,'Chouquette','',5.50);
+INSERT  INTO menu (id,nom, description, prix,image_url) VALUES(1,'Box matinale','',15.50,'/image/Box matinale.jpg');
+INSERT  INTO menu (id,nom, description, prix,image_url) VALUES(2,'Box viennoiserie','',16.50,'/image/Box viennoiserie.webp');
+INSERT  INTO menu (id,nom, description, prix,image_url) VALUES(3,'Chouquette','',5.50,'/image/chouquettes.jpg');
 
 INSERT  INTO produit_categorie(produit_id, categorie_id) VALUES  (1,1);
 INSERT  INTO produit_categorie(produit_id, categorie_id) VALUES  (2,1);
@@ -57,12 +57,8 @@ INSERT INTO commune(id,nom,code_postale) values(1,'sucy','94450');
 
 INSERT INTO livreur_commune (livreur_id, commune_id) VALUES (3, 1);
 
-INSERT INTO photo_article (id, libele, url, produit_id) VALUES (1, 'photo thé blanc', 'https://www.bebe-au-naturel.com/images/rep_articles/grandes/29153.jpg', 1);
-
-
-
-
-
-
-
-
+INSERT INTO photo_article (id, libele, url, produit_id) VALUES (1, 'tysane pita', '/image/tysane pita.jpg', 1);
+INSERT INTO photo_article (id, libele, url, produit_id) VALUES (2, 'tysane vata', '/image/tysane vata.jpg', 2);
+INSERT INTO photo_article (id, libele, url, produit_id) VALUES (3, 'tysane kapha', '/image/tysane kapha.jpg', 3);
+INSERT INTO photo_article (id, libele, url, produit_id) VALUES (4, 'tiramisu', '/image/Tiramisu.jpg', 4);
+INSERT INTO photo_article (id, libele, url, produit_id) VALUES (5, 'pain perdu', '/image/pain-perdu-05.webp', 5);

@@ -7,25 +7,8 @@
 </head>
 <body>
 <div th:replace="fragments/header :: menu(activeTab='home')"/>
-<ul>
-    <!--    pour parourir les listes-->
-    <li th:each="dessert :${desserts}">
-        <!--        afficher le nom d'une boisson-->
-        <p th:text="${dessert.nom}"></p>
-        <form th:action="@{/panier/ajouter/produit}" method="post"  th:object="${produitPanierDTO}">
-            <input  type="text" name="id"  th:value="${dessert.id}" hidden>
-            <select name="tailleID" id="produit-taille">
-                <option value="">--choix de tailles--</option>
-                <option th:each="produitTarif :${dessert.produitTarifs}" th:field="*{tailleID}"  th:value="${produitTarif.taille.id}" th:text="${produitTarif.taille.name}"></option>
-            </select>
-            <select name="quantiter" id="produit-quantite">
-                <option value="">choix de la quantiters</option>
-                <option th:each="quantiter :${#numbers.sequence(1, 10)}" th:field="*{quantiter}" th:value="${quantiter}" th:text="${quantiter}"></option>
-            </select>
-            <input type="submit" value="ajouter au panier">
-        </form>
-
-
+<ul class="grid" >
+    <li th:replace="fragments/productItem.html::productItem(items=${desserts},dto=${dto},action=@{/panier/ajouter/produit})">
 
     </li>
 </ul>

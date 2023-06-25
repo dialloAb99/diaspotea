@@ -8,17 +8,10 @@
 <body>
 <div th:replace="fragments/header :: menu(activeTab='home')"/>
 <h1>Mon compte</h1>
-<nav><input type="search" placeholder="search"></nav>
-<section>
-    <h2>Commande</h2>
-    <ul>
-        <li>Gerer vos commandes</li>
-    </ul>
-</section>
 <section>
     <h3>Parametre du compte</h3>
     <ul>
-        <li>Adresses</li>
+        <li><a href="/modifier-adresse" >modifier adresse</a></li>
     </ul>
 </section>
 

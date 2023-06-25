@@ -53,11 +53,9 @@ public class ProduitServiceTest {
     void ajouterCategorieAuProduit(){
         Categorie categorie=categorieService.getCategorie(1);
         Produit produit=produitService.recupererProduit(1);
-        produit.addCategorie(categorie);
+        produit.setCategorie(categorie);
         Produit ajouterCategorieAuProduit=produitService.modifierProduit(produit);
-        assertThat(ajouterCategorieAuProduit.getCategories())
-                .asList()
-                .contains(categorie);
+        assertThat(ajouterCategorieAuProduit.getCategorie()).isEqualTo(categorie);
     }
     @Test
     @Transactional

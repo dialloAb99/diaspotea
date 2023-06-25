@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Liste des produits</title>
     <link rel="stylesheet" th:href="@{/resources/css/style.css}">
-    <script defer   th:src="@{/resources/js/admin.js}"></script>
 </head>
 <body>
 <div th:replace="fragments/header :: menu(activeTab='home')"/>
@@ -14,12 +13,11 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-4">
-                <h2 class="heading-section">Table #06</h2>
+                <h2 class="heading-section">Liste des produits</h2>
             </div>
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h3 class="h5 mb-4 text-center">Table Accordion</h3>
                 <div class="table-wrap">
                     <p th:text="${status}" class="h1"></p>
                     <table class="table">
@@ -44,7 +42,10 @@
                             </td>
                             <td>
                                 <div th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.ProduitDto' }">
-                                    <img class="img" th:each="photoArticle,iter: ${produit.photoArticles}" th:if="${iter.index} == 0" th:src="${photoArticle.url}"/>
+                                    <img class="img" th:each="photoArticle,iter: ${produit.photoArticles}" th:if="${iter.index} == 0" th:src="'/resources'+${photoArticle.url}"/>
+                                </div>
+                                <div th:if="${produit.class.name == 'com.diaspotea.diaspoteaserver.dto.MenuDto' }">
+                                    <img class="img"   th:src="'/resources'+${produit.imageUrl}"/>
                                 </div>
 
                             </td>

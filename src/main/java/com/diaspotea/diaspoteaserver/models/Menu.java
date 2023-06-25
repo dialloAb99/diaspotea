@@ -3,9 +3,15 @@ package com.diaspotea.diaspoteaserver.models;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.PreRemove;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Getter
@@ -18,6 +24,8 @@ public class Menu {
     private String nom;
     private String description;
     private  float prix;
+    @Column(name = "image_url")
+    private String imageUrl;
     @ManyToMany(mappedBy = "menus")
     private List<ProduitTarif> produits;
     @OneToMany(mappedBy = "menu")

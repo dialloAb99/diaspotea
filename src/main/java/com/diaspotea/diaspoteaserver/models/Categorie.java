@@ -25,6 +25,6 @@ public class Categorie {
     @GeneratedValue(strategy=IDENTITY)
     private int id;
     private  String nom;
-    @ManyToMany(mappedBy = "categories")
+    @OneToMany(mappedBy = "categorie")
     private List<Produit>produits;
 }
